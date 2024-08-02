@@ -4,4 +4,8 @@
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
+
+  @include mobile {
+    padding: 0 16px;
+  }
 }

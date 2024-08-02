@@ -1,11 +1,29 @@
 .header {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  @include desktop {
+    top: 20px;
+  }
+
+  @include mobile {
+    top: 16px;
+  }
+
   & .container {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    padding: 38px 40px;
+    padding: 38px 56px;
+
+    @include desktop {
+      padding: 38px 40px;
+    }
 
     @include laptop {
       padding: 20px 40px;
