@@ -1,6 +1,5 @@
 .first-screen {
   padding-top: 42px;
-  padding-bottom: 42px;
 
   @include desktop {
     padding-top: 20px;
@@ -121,13 +120,13 @@
     }
 
     @include tabletsm {
-      bottom: 140px;
+      top: 420px;
+      bottom: auto;
     }
 
     @include mobile {
       top: 490px;
       left: auto;
-      bottom: auto;
     }
 
     &-link {
@@ -141,7 +140,10 @@
       border: 1px solid rgba(255, 255, 255, 0.7);
       border-radius: 30px;
       backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.2);
+      transition: all ease-in-out 0.1s;
+      will-change: background-color, transform;
+      cursor: pointer;
 
       @include laptop {
         padding: 9px 15px;
@@ -151,6 +153,14 @@
 
       @include mobile {
         display: none;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.36);
+      }
+
+      &:active {
+        transform: scale(0.97);
       }
 
       &:last-child {
@@ -173,6 +183,9 @@
       border-radius: 42px;
       background: url(../assets/catalog-button.svg) right center no-repeat;
       background-size: auto 42px;
+      transition: transform ease-in-out 0.1s;
+      will-change: transform;
+      cursor: pointer;
 
       @include desktop {
         position: static;
@@ -194,6 +207,10 @@
         box-sizing: border-box;
         background-position: center;
         background-size: contain;
+      }
+
+      &:active {
+        transform: scale(0.94);
       }
 
       &-text {
