@@ -5,7 +5,7 @@
   & .swiper {
     overflow: visible;
 
-    &-scrollbar  {
+    &-scrollbar {
       position: relative;
       top: 0;
       left: 0;
@@ -96,6 +96,17 @@
         line-height: 125%;
         color: #000;
         opacity: 0.6;
+        transition: all ease-in-out 0.1s;
+        will-change: transform, opacity;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
 
         &::after {
           content: '';
@@ -115,6 +126,13 @@
         border-radius: 40px;
         background: url(../assets/icons/basket.svg) center no-repeat;
         background-color: $black;
+        transition: transform ease-in-out 0.1s;
+        will-change: transform;
+        cursor: pointer;
+
+        &:active {
+          transform: scale(0.96);
+        }
       }
     }
   }
