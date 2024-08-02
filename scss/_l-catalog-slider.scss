@@ -1,0 +1,121 @@
+.catalog-slider {
+  overflow: hidden;
+  padding-bottom: 90px;
+
+  & .swiper {
+    overflow: visible;
+
+    &-scrollbar  {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin-top: 30px;
+      width: 100%;
+      height: 3px;
+      background-color: #333437;
+
+      &-drag {
+        top: -2px;
+        border-radius: 50px;
+        height: 7px;
+        background-color: #595b60;
+      }
+    }
+  }
+
+  &__slide {
+    padding: 40px;
+    border-radius: 24px;
+    background-color: $white;
+
+    @include mobile {
+      padding: 25px;
+    }
+
+    &-title {
+      display: -webkit-box;
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      max-height: 48px;
+      height: 48px;
+      margin: 0 0 6px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-tag {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 125%;
+      color: #003d89;
+
+      &:before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 5px;
+        background-color: #003d89;
+      }
+    }
+
+    &-figure {
+      margin: 24px 0;
+
+      &-image {
+        display: block;
+        width: 304px;
+        height: 240px;
+        object-fit: cover;
+      }
+    }
+
+    &-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+
+      &-more {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 125%;
+        color: #000;
+        opacity: 0.6;
+
+        &::after {
+          content: '';
+          width: 20px;
+          height: 5px;
+          border-radius: 5px;
+          background: url(../assets/icons/arrow-thin.svg) center no-repeat;
+        }
+      }
+
+      &-basket {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        border: none;
+        border-radius: 40px;
+        background: url(../assets/icons/basket.svg) center no-repeat;
+        background-color: $black;
+      }
+    }
+  }
+}
