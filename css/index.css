@@ -233,6 +233,10 @@ img {
   transform: scale(0.96);
 }
 
+.main {
+  overflow: hidden;
+}
+
 .first-screen {
   padding-top: 42px;
 }
@@ -472,6 +476,8 @@ img {
 }
 
 .about {
+  position: relative;
+  z-index: 10;
   padding: 110px 0 100px;
 }
 @media (max-width: 992px) {
@@ -769,4 +775,213 @@ img {
 }
 .catalog-slider__slide-controls-basket:active {
   transform: scale(0.96);
+}
+
+.pass-test {
+  padding: 0 0 120px;
+}
+@media (max-width: 992px) {
+  .pass-test {
+    padding: 0 0 70px;
+  }
+}
+.pass-test__content {
+  position: relative;
+  padding: 42px 50px;
+  border-radius: 20px;
+  background: url(../assets/pass-test-bg.jpg) center no-repeat;
+  background-size: cover;
+}
+@media (max-width: 992px) {
+  .pass-test__content {
+    padding: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .pass-test__content {
+    padding: 50px 25px;
+  }
+}
+.pass-test__title {
+  position: relative;
+  z-index: 10;
+  max-width: 654px;
+  margin: 0;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 143%;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .pass-test__title {
+    max-width: 548px;
+    font-size: 30px;
+    line-height: 127%;
+  }
+}
+@media (max-width: 576px) {
+  .pass-test__title {
+    font-size: 22px;
+    line-height: 145%;
+  }
+}
+.pass-test__title span {
+  font-style: italic;
+  font-weight: 600;
+}
+.pass-test__controls {
+  position: relative;
+  z-index: 10;
+  padding: 70px 0 76px;
+}
+@media (max-width: 992px) {
+  .pass-test__controls {
+    padding: 30px 0 100px;
+  }
+}
+@media (max-width: 576px) {
+  .pass-test__controls {
+    padding: 35px 0;
+  }
+}
+.pass-test__controls-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 58px;
+  padding: 10px 36px;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 48px;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all ease-in-out 0.1s;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .pass-test__controls-button {
+    height: 45px;
+    padding: 10px 28px;
+    font-weight: 500;
+    font-size: 13px;
+  }
+}
+.pass-test__controls-button:hover {
+  color: #1a181d;
+  background-color: #ffffff;
+}
+.pass-test__controls-button:active {
+  transform: scale(0.97);
+}
+.pass-test__controls-button::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  height: 58px;
+  width: 58px;
+  border-radius: 48px;
+  background: url(../assets/icons/arrow.svg) center no-repeat;
+  background-color: #ffffff;
+}
+@media (max-width: 992px) {
+  .pass-test__controls-button::after {
+    height: 45px;
+    width: 45px;
+  }
+}
+.pass-test__description {
+  position: relative;
+  z-index: 10;
+  max-width: 642px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 992px) {
+  .pass-test__description {
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 127%;
+  }
+}
+@media (max-width: 576px) {
+  .pass-test__description {
+    max-width: 228px;
+    font-size: 12px;
+    line-height: 145%;
+  }
+}
+.pass-test__figure {
+  position: absolute;
+  top: 50%;
+  left: 720px;
+  transform: translateY(-50%);
+}
+@media (max-width: 1200px) {
+  .pass-test__figure {
+    left: 640px;
+  }
+}
+@media (max-width: 992px) {
+  .pass-test__figure {
+    left: 580px;
+  }
+}
+@media (max-width: 768px) {
+  .pass-test__figure {
+    left: 420px;
+    top: 70%;
+  }
+}
+@media (max-width: 576px) {
+  .pass-test__figure {
+    left: auto;
+    right: -50px;
+    top: 120%;
+  }
+}
+.pass-test__figure::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 62%;
+  height: 44%;
+  width: 21%;
+  background-color: #FFE4B9;
+  transform: translateX(-50%) translateY(-50%) rotate(-30deg);
+  filter: drop-shadow(0px 0px 100px #FFE4B9);
+}
+.pass-test__figure-led {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: none;
+  width: 520px;
+  height: auto;
+}
+@media (max-width: 1200px) {
+  .pass-test__figure-led {
+    width: 480px;
+  }
+}
+@media (max-width: 992px) {
+  .pass-test__figure-led {
+    width: 360px;
+  }
+}
+@media (max-width: 768px) {
+  .pass-test__figure-led {
+    width: 280px;
+  }
+}
+@media (max-width: 576px) {
+  .pass-test__figure-led {
+    width: 200px;
+  }
 }

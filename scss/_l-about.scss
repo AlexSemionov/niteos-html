@@ -1,4 +1,6 @@
 .about {
+  position: relative;
+  z-index: 10;
   padding: 110px 0 100px;
 
   @include laptop {
