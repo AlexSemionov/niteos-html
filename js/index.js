@@ -25,3 +25,24 @@ const catalogSwiper = new Swiper('.catalog-slider .swiper', {
     el: '.catalog-slider .swiper-scrollbar',
   },
 });
+
+
+const projectsSwiper = new Swiper('.projects .swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 1.05,
+    },
+    1200: {
+      slidesPerView: 1.2,
+    },
+  },
+  navigation: {
+    nextEl: '.projects__top-info-controls-buttons-next',
+    prevEl: '.projects__top-info-controls-buttons-prev',
+  },
+});
