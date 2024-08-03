@@ -1,0 +1,264 @@
+.advantages {
+  position: relative;
+  z-index: 10;
+  padding: 120px 0;
+
+  @include laptop {
+    padding: 70px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include tablet {
+      gap: 20px;
+    }
+
+    @include mobile {
+      gap: 16px;
+    }
+  }
+
+  &__info {
+    flex: 0 0 calc(50% - 15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    order: 0;
+    min-height: 264px;
+    box-sizing: border-box;
+
+    @include desktop {
+      flex: 0 0 calc(100% / 3 * 2 - 10px);
+    }
+
+    @include tablet {
+      flex: 0 0 calc(50% - 10px);
+    }
+
+    @include mobile {
+      flex: 0 0 100%;
+      min-height: 225px;
+      margin-bottom: 16px;
+      padding-right: 120px;
+    }
+
+    &-title {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+
+      &-number {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 133%;
+        color: rgba($color: $white, $alpha: 0.6);
+      }
+
+      &-text {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 133%;
+        color: #fff;
+      }
+    }
+
+    &-text {
+      max-width: 354px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 133%;
+      color: rgba($color: $white, $alpha: 0.6);
+    }
+  }
+
+  &__block {
+    flex: 0 0 calc(25% - 30px / 4 * 3);
+    display: flex;
+    flex-direction: column;
+    min-height: 264px;
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    @include desktop {
+      flex: 0 0 calc(100% / 3 - 30px / 3 * 2);
+    }
+
+    @include tablet {
+      flex: 0 0 calc(50% - 10px);
+    }
+
+    @include mobile {
+      flex: 0 0 100%;
+      min-height: 225px;
+    }
+
+    &:nth-child(2) {
+
+      
+      @include tablet {
+        order: 3;
+      }
+
+      @include mobile {
+        min-height: 24px;
+        align-items: center;
+      }
+    }
+
+    &:nth-child(3) {
+      @include tablet {
+        order: 1;
+      }
+    }
+
+    &:nth-child(4) {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &:nth-child(5) {
+      @include tablet {
+        order: 2;
+      }
+    }
+
+    &:nth-child(6) {
+      @include tablet {
+        order: 4;
+      }
+    }
+
+    &:nth-child(7) {
+      @include tablet {
+        order: 5;
+      }
+    }
+
+    &:nth-child(8) {
+      @include tablet {
+        order: 6;
+      }
+    }
+
+    &:nth-child(9) {
+      @include tablet {
+        order: 8;
+      }
+
+      @include mobile {
+        min-height: 24px;
+        background-position: center right;
+      }
+    }
+
+    &:nth-child(10) {
+      @include tablet {
+        order: 9;
+      }
+    }
+
+    &:nth-child(11) {
+      @include tablet {
+        order: 7;
+      }
+    }
+
+    &_filled {
+      background-color: #333437;
+    }
+
+    &_outlined {
+      border: 2px solid #616161;
+    }
+
+    &_arrow {
+      border-radius: 0;
+      background: url(../assets/icons/arrow-down.svg) top right no-repeat;
+    }
+
+    &_textonly {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      flex-direction: row;
+      padding: 0;
+      font-weight: 600;
+      font-size: 12px;
+      text-align: center;
+      color: #616161;
+    }
+
+    &-number {
+      flex: 1 1 auto;
+      margin: 0 0 10px;
+      font-weight: 400;
+      font-size: 14px;
+      text-align: right;
+      color: #969ca2;
+    }
+
+    &-heading {
+      margin: 0 0 10px;
+      font-weight: 700;
+      font-size: 52px;
+      color: #fff;
+
+      @include laptop {
+        font-size: 44px;
+      }
+
+      &_md {
+        font-size: 36px;
+
+        @include laptop {
+          font-size: 30px;
+          line-height: 173%;
+        }
+
+        & span {
+          font-size: 52px;
+
+          @include laptop {
+            font-size: 44px;
+          }
+        }
+      }
+    }
+
+    &-title {
+      margin: 0 0 10px;
+      font-weight: 700;
+      font-size: 24px;
+      color: #fff;
+
+      @include laptop {
+        font-size: 22px;
+      }
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 133%;
+      color: #fff;
+      opacity: 0.8;
+
+      @include laptop {
+        font-size: 16px;
+        line-height: 137%;
+      }
+
+      @include mobile {
+        font-size: 14px;
+        line-height: 143%;
+      }
+    }
+  }
+}
