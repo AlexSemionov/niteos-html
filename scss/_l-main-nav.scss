@@ -1,0 +1,430 @@
+.main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  padding-top: 80px;
+  box-sizing: border-box;
+  overflow: auto;
+  background-color: #1a181d;
+  transform: translateY(-120%);
+  transition: transform ease-in-out 0.2s;
+
+  @include desktop {
+    padding-top: 60px;
+  }
+
+  @include laptop {
+    padding-top: 42px;
+  }
+
+  @include tabletsm {
+    padding-top: 40px;
+  }
+
+  @include mobile {
+    padding-top: 38px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #333333;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #666666;
+  }
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  & .container {
+    padding: 0 55px;
+
+    @include desktop {
+      padding: 0 40px;
+    }
+  }
+
+  &__header {
+    & .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px 24px;
+
+      @include tabletsm {
+        flex-wrap: wrap;
+      }
+    }
+
+    &-title {
+      flex: 1 1 100%;
+      order: 1;
+      text-align: center;
+
+      @include tabletsm {
+        order: 2;
+        text-align: left;
+      }
+
+      &-text {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 12px;
+        color: #dadada;
+        opacity: 0.6;
+
+        @include tabletsm {
+          max-width: 186px;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+    order: 0;
+    width: fit-content;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-image {
+      flex: 0 0 auto;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__close {
+    order: 2;
+    margin-right: -3px;
+
+    @include tabletsm {
+      order: 1;
+    }
+
+    &-button {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 7px;
+      background: url(../assets/icons/close.svg) center no-repeat;
+      background-color: rgba(255, 255, 255, 0.36);
+      backdrop-filter: blur(7px);
+      transition: transform ease-in-out 0.1s;
+      will-change: transform;
+      cursor: pointer;
+
+      @include laptop {
+        width: 35px;
+        height: 35px;
+      }
+
+      &:active {
+        transform: scale(0.96);
+      }
+    }
+  }
+
+  &__menu {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+
+    & .container {
+      position: relative;
+      flex: 1 1 auto;
+      display: flex;
+      gap: 60px;
+      padding-top: 136px;
+      padding-bottom: 155px;
+
+      @include laptop {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+
+      @include tabletsm {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 563px;
+        bottom: 0;
+        z-index: -1;
+        width: 1px;
+        height: 50%;
+        background-color: #ffffff;
+        opacity: 0.9;
+
+        @include desktop {
+          left: 549px;
+        }
+
+        @include laptop {
+          display: none;
+        }
+      }
+    }
+
+    &-main {
+      flex: 0 0 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 46px;
+
+      @include laptop {
+        flex: 0 0 auto;
+      }
+
+      @include tabletsm {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      &-link {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 133%;
+        color: #fff;
+
+        @include tabletsm {
+          flex: 0 0 calc(50% - 10px);
+          gap: 20px;
+        }
+      }
+    }
+
+    &-detailed {
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 70px 20px;
+
+      @include tabletsm {
+        gap: 20px;
+      }
+    }
+
+    &-block {
+      position: relative;
+      z-index: 1;
+      flex: 0 0 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      @include tabletsm {
+        flex: 0 1 calc(50% - 10px);
+      }
+
+      @include mobile {
+        flex: 1 1 calc(50% - 10px);
+        min-width: 160px;
+      }
+
+      &:first-child {
+        &:before {
+          content: '';
+          position: absolute;
+          top: -80px;
+          left: calc(100% - 20px);
+          z-index: -1;
+          width: 133px;
+          height: 457px;
+          background: url(../assets/street-light.svg) top left no-repeat;
+
+          @include laptop {
+            display: none;
+          }
+        }
+      }
+
+      &-heading {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 133%;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      &-link {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #fff;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 42px 0 30px;
+    border-top: 1px solid #fff;
+    border-radius: 50px 50px 0 0;
+
+    & .container {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+
+      @include desktop {
+        justify-content: center;
+      }
+
+      & > * {
+        @include laptop {
+          display: flex;
+          flex: 0 0 calc(50% - 8px);
+        }
+
+        @include tabletsm {
+          flex: 1 1 100%;
+          justify-content: center;
+        }
+
+        & > * {
+          @include tabletsm {
+            min-width: auto;
+          }
+        }
+
+        &:nth-child(even) {
+          @include laptop {
+            justify-content: flex-end;
+          }
+
+          @include tabletsm {
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+    &-links {
+      position: absolute;
+      z-index: 5;
+      top: 10px;
+      left: 55px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      @include desktop {
+        left: 40px;
+      }
+
+      @include laptop  {
+        top: -300px;
+      }
+
+      @include tablet  {
+        top: -360px;
+      }
+
+      @include tabletsm  {
+        top: -200px;
+        left: auto;
+        right: 40px;
+        flex-direction: column;
+      }
+
+      &-item {
+        flex: 0 0 auto;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: transform ease-in-out 0.1s;
+        will-change: transform;
+        cursor: pointer;
+  
+        &:active {
+          transform: scale(0.9);
+        }
+  
+        &_search {
+          background-image: url(../assets/icons/search-outline.svg);
+        }
+  
+        &_account {
+          background-image: url(../assets/icons/person-outline.svg);
+        }
+  
+        &_favourite {
+          background-image: url(../assets/icons/heart-outline.svg);
+        }
+      }
+    }
+
+    &-social {
+      flex: 1 1 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px;
+
+      @include laptop {
+        min-height: 52px;
+        max-width: calc(50% - 8px);
+        justify-content: flex-start;
+      }
+
+      &-link {
+        flex: 0 0 auto;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 1px solid #ffffff;
+        border-radius: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &_whatsapp {
+          background-image: url(../assets/icons/whatsapp.svg);
+        }
+
+        &_tg {
+          background-image: url(../assets/icons/telegram.svg);
+        }
+
+        &_dzen {
+          background-image: url(../assets/icons/dzen.svg);
+        }
+      }
+    }
+
+    &-item {
+      min-height: 52px;
+    }
+  }
+}
