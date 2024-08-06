@@ -75,9 +75,13 @@
       width: 20px;
       background-position: center;
       background-repeat: no-repeat;
-      transition: transform ease-in-out 0.1s;
+      transition: all  ease-in-out 0.1s;
       will-change: transform;
       cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
 
       &:active {
         transform: scale(0.9);
@@ -144,7 +148,7 @@
       &-menu {
         position: absolute;
         top: 100%;
-        right: 0;
+        left: 16px;
         display: none;
         flex-direction: column;
         gap: 10px;
@@ -166,6 +170,11 @@
         font-size: 14px;
         text-align: center;
         color: #fff;
+        transition: opacity ease-in-out 0.1s;
+
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
 

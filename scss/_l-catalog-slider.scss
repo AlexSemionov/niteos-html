@@ -130,6 +130,10 @@
         will-change: transform;
         cursor: pointer;
 
+        &:hover {
+          background-color: rgba($color: $black, $alpha: 0.5);
+        }
+
         &:active {
           transform: scale(0.96);
         }

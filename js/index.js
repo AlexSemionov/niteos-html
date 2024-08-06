@@ -1,6 +1,7 @@
 const catalogSwiper = new Swiper('.catalog-slider .swiper', {
   slidesPerView: 1,
   spaceBetween: 20,
+  mousewheel: true,
   breakpoints: {
     320: {
       slidesPerView: 1,
@@ -66,7 +67,7 @@ const headerInfoContactsFasade = document.querySelector('.header__info-contacts-
 const headerInfoContactsLinks = document.querySelectorAll('.header__info-contacts-link');
 
 if (headerInfoContactsLinks[0]) {
-  updateFasade(headerInfoContactsLinks[0])
+  updateFasade(headerInfoContactsLinks[0]);
 }
 
 if (headerInfoContactsFasade) {

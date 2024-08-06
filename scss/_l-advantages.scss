@@ -172,10 +172,18 @@
 
     &_filled {
       background-color: #333437;
+      border: 2px solid #333437;
+      transition: border ease-in-out 0.2s, background-color ease-in-out 0.2s,;
+
+      &:hover {
+        border: 2px solid #616161;
+        background-color: rgba($color: #333437, $alpha: 0);
+      }
     }
 
     &_outlined {
       border: 2px solid #616161;
+     
     }
 
     &_arrow {

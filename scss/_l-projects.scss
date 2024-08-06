@@ -119,11 +119,16 @@
             box-sizing: border-box;
             border: 1px solid #ffffff;
             border-radius: 35px;
+            transition: background-color ease-in-out 0.1s, transform ease-in-out 0.1s;
             cursor: pointer;
 
             @include mobile {
               width: 35px;
               height: 35px;
+            }
+
+            &:active {
+              transform: scale(0.96);
             }
 
             &::before {
@@ -132,20 +137,41 @@
               width: 12px;
               height: 16px;
               background: url(../assets/icons/prev.svg) left center no-repeat;
+              transition: filter ease-in-out 0.1s;
             }
           }
 
           &-next {
-            background-color: #ffffff;
+            background-color: rgba($color: #ffffff, $alpha: 1);
+
+            &:hover {
+              background-color: rgba($color: #333437, $alpha: 1);
+            }
 
             &::before {
               filter: brightness(0.2);
               transform: rotate(180deg);
             }
+
+            &:hover::before {
+              filter: brightness(1);
+            }
           }
 
           &-prev {
-            background-color: rgba($color: #ffffff, $alpha: 0);
+            background-color: rgba($color: #333437, $alpha: 1);
+
+            &:hover {
+              background-color: rgba($color: #ffffff, $alpha: 1);
+            }
+
+            &::before {
+              filter: brightness(1);
+            }
+
+            &:hover::before {
+              filter: brightness(0.2);
+            }
           }
         }
 
@@ -157,9 +183,18 @@
           font-size: 18px;
           line-height: 100%;
           color: #fff;
+          transition: all ease-in-out 0.1s;
 
           @include mobile {
             font-size: 14px;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+          &:active {
+            transform: scale(0.96);
           }
 
           &::after {

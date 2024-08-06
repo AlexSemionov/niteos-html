@@ -211,6 +211,15 @@
         font-size: 18px;
         line-height: 133%;
         color: #fff;
+        transition: opacity ease-in-out 0.1;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &:active {
+          opacity: 0.6;
+        }
 
         @include tabletsm {
           flex: 0 0 calc(50% - 10px);
@@ -271,6 +280,15 @@
         line-height: 133%;
         text-transform: uppercase;
         color: #fff;
+        transition: opacity ease-in-out 0.1;
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        &:active {
+          opacity: 0.6;
+        }
       }
 
       &-link {
@@ -279,6 +297,15 @@
         line-height: 150%;
         color: #fff;
         opacity: 0.6;
+        transition: opacity ease-in-out 0.1;
+
+        &:hover {
+          opacity: 0.4;
+        }
+
+        &:active {
+          opacity: 0.3;
+        }
       }
     }
   }
@@ -341,15 +368,15 @@
         left: 40px;
       }
 
-      @include laptop  {
+      @include laptop {
         top: -300px;
       }
 
-      @include tablet  {
+      @include tablet {
         top: -360px;
       }
 
-      @include tabletsm  {
+      @include tabletsm {
         top: -200px;
         left: auto;
         right: 40px;
@@ -365,20 +392,25 @@
         background-repeat: no-repeat;
         transition: transform ease-in-out 0.1s;
         will-change: transform;
+        transition: all ease-in-out 0.1;
         cursor: pointer;
-  
-        &:active {
-          transform: scale(0.9);
+
+        &:hover {
+          opacity: 0.8;
         }
-  
+
+        &:active {
+          transform: scale(0.94);
+        }
+
         &_search {
           background-image: url(../assets/icons/search-outline.svg);
         }
-  
+
         &_account {
           background-image: url(../assets/icons/person-outline.svg);
         }
-  
+
         &_favourite {
           background-image: url(../assets/icons/heart-outline.svg);
         }
@@ -408,6 +440,15 @@
         border-radius: 40px;
         background-position: center;
         background-repeat: no-repeat;
+        transition: all ease-in-out 0.1s;
+
+        &:hover {
+          border-color: rgba($color: $white, $alpha: 0.4);
+        }
+
+        &:active {
+          transform: scale(0.94);
+        }
 
         &_whatsapp {
           background-image: url(../assets/icons/whatsapp.svg);
