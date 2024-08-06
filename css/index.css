@@ -1621,6 +1621,7 @@ img {
   padding: 50px;
   border-radius: 20px;
   background-color: #333437;
+  overflow: hidden;
 }
 @media (max-width: 576px) {
   .projects__content {
@@ -2001,6 +2002,9 @@ img {
     height: 270px;
   }
 }
+.projects__slider .swiper {
+  overflow: visible;
+}
 .projects__slider .swiper-slide-active > * {
   flex-direction: row;
 }
@@ -2179,27 +2183,6 @@ img {
     padding-bottom: 40px;
   }
 }
-.main-nav__menu .container::after {
-  content: "";
-  position: absolute;
-  left: 563px;
-  bottom: 0;
-  z-index: -1;
-  width: 1px;
-  height: 50%;
-  background-color: #ffffff;
-  opacity: 0.9;
-}
-@media (max-width: 1200px) {
-  .main-nav__menu .container::after {
-    left: 549px;
-  }
-}
-@media (max-width: 992px) {
-  .main-nav__menu .container::after {
-    display: none;
-  }
-}
 .main-nav__menu-main {
   flex: 0 0 220px;
   display: flex;
@@ -2252,10 +2235,15 @@ img {
 .main-nav__menu-block {
   position: relative;
   z-index: 1;
-  flex: 0 0 220px;
+  flex: 0 0 20%;
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+@media (max-width: 1200px) {
+  .main-nav__menu-block {
+    flex: 0 0 220px;
+  }
 }
 @media (max-width: 740px) {
   .main-nav__menu-block {
@@ -2268,19 +2256,30 @@ img {
     min-width: 160px;
   }
 }
-.main-nav__menu-block:first-child:before {
+.main-nav__menu-block::before {
   content: "";
   position: absolute;
-  top: -80px;
-  left: calc(100% - 20px);
+  top: -50px;
+  left: -50px;
   z-index: -1;
-  width: 133px;
-  height: 457px;
+  width: 95px;
+  height: 0;
   background: url(../assets/street-light.svg) top left no-repeat;
+  opacity: 0;
+  transition: opacity ease-in-out 0.2s, height linear 0.3s;
 }
 @media (max-width: 992px) {
-  .main-nav__menu-block:first-child:before {
+  .main-nav__menu-block::before {
     display: none;
+  }
+}
+.main-nav__menu-block:hover::before {
+  opacity: 1;
+  height: calc(100% + 205px);
+}
+@media (max-width: 1200px) {
+  .main-nav__menu-block:hover::before {
+    height: calc(100% + 85px);
   }
 }
 .main-nav__menu-block-heading {

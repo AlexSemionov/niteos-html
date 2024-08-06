@@ -3,6 +3,7 @@
     padding: 50px;
     border-radius: 20px;
     background-color: #333437;
+    overflow: hidden;
 
     @include mobile {
       padding: 25px;
@@ -402,6 +403,8 @@
     }
 
     & .swiper {
+      overflow: visible;
+
       &-slide {
         &-active {
           & > * {
