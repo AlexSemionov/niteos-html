@@ -132,3 +132,29 @@ projectGallerySwiper.on('slideChangeTransitionStart', function () {
 });
 
 projectGallerySwiper.init();
+
+const projectWorkersSwiper = new Swiper('.project-workers .swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    576: {
+      slidesPerView: 1.5,
+    },
+    768: {
+      slidesPerView: 1.8,
+    },
+    992: {
+      slidesPerView: 2.5,
+    },
+    1200: {
+      slidesPerView: 3.2,
+    },
+  },
+  navigation: {
+    nextEl: '.project-workers__controls-next',
+    prevEl: '.project-workers__controls-prev',
+  },
+});
