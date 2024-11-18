@@ -1,0 +1,169 @@
+.project {
+  padding: 170px 0 0;
+
+  @include laptop {
+    padding: 110px 0 0;
+  }
+
+  &__top {
+    position: relative;
+    margin: 0 0 48px;
+
+    @include laptop {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 30px;
+      margin: 0 0 60px;
+    }
+
+    @include mobile {
+      margin: 0 0 70px;
+    }
+
+    &-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 690px;
+      width: fit-content;
+      margin: 0;
+      padding: 0 48px 48px 0;
+      box-sizing: border-box;
+      border-radius: 0 0 20px 0;
+      background-color: #1a181d;
+
+      @include laptop {
+        position: static;
+        flex: 1 1 calc(100% - 360px);
+        padding: 0;
+      }
+
+      @include tabletsm {
+        flex: 1 1 100%;
+      }
+
+      @include mobile {
+      }
+
+      &-title {
+        margin: 0 0 30px;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 125%;
+        color: #fff;
+
+        @include laptop {
+          font-size: 30px;
+        }
+
+        @include mobile {
+          margin: 0 0 20px;
+          font-size: 21px;
+        }
+
+        & b {
+          font-weight: 600;
+        }
+      }
+
+      &-description {
+        margin: 0;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: #fff;
+        opacity: 0.6;
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-details {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 320px;
+      width: fit-content;
+      padding: 128px 30px 30px;
+      box-sizing: border-box;
+      font-weight: 400;
+      font-size: 18px;
+      color: #fff;
+      border-radius: 20px;
+      background-color: #333437;
+
+      @include laptop {
+        position: static;
+        flex: 0 0 320px;
+        min-width: auto;
+        padding: 30px;
+      }
+
+      @include tabletsm {
+        flex: 1 1 100%;
+      }
+
+      &-year {
+        opacity: 0.4;
+
+        @include laptop {
+          font-size: 14px;
+        }
+      }
+
+      &-category,
+      &-location {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 400;
+        font-size: 18px;
+        color: #fff;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 15px;
+          height: 22px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+
+      &-category {
+        &::before {
+          background-image: url(../assets/icons/bookmark-sharp.svg);
+        }
+      }
+
+      &-location {
+        &::before {
+          background-image: url(../assets/icons/location-sharp.svg);
+        }
+      }
+    }
+
+    &-figure {
+      display: block;
+      width: 100%;
+      aspect-ratio: 136 / 75;
+      overflow: hidden;
+      border-radius: 20px;
+
+      &-image {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

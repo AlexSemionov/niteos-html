@@ -13,6 +13,20 @@
     top: 16px;
   }
 
+  &_project {
+    top: 40px;
+    padding: 0 20px;
+
+    @include desktop {
+      top: 20px;
+    }
+
+    @include mobile {
+      top: 16px;
+      padding: 0 16px;
+    }
+  }
+
   & .container {
     position: relative;
     display: flex;
@@ -27,6 +41,20 @@
 
     @include laptop {
       padding: 20px 40px;
+    }
+  }
+
+  &_project .container {
+    padding: 20px 45px;
+    border-radius: 64px;
+    background-color: #000;
+
+    @include desktop {
+      padding: 20px 30px;
+    }
+
+    @include laptop {
+      padding: 20px 24px;
     }
   }
 
@@ -75,7 +103,7 @@
       width: 20px;
       background-position: center;
       background-repeat: no-repeat;
-      transition: all  ease-in-out 0.1s;
+      transition: all ease-in-out 0.1s;
       will-change: transform;
       cursor: pointer;
 
@@ -98,6 +126,12 @@
       &_favourite {
         background-image: url(../assets/icons/heart-outline.svg);
       }
+    }
+  }
+
+  &_project &__social {
+    @include tabletsm {
+      display: none;
     }
   }
 
@@ -209,6 +243,18 @@
       &:active {
         transform: scale(0.97);
       }
+    }
+  }
+
+  &_project &__info {
+    @include tabletsm {
+      display: none;
+    }
+  }
+
+  &_project &__info-contacts-menu {
+    @include laptop {
+      display: none;
     }
   }
 
