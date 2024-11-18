@@ -361,7 +361,28 @@ img {
 .main {
   overflow: hidden;
 }
+.main_project {
+  padding: 0 0 100px;
+}
+@media (max-width: 992px) {
+  .main_project {
+    padding: 0 0 70px;
+  }
+}
+@media (max-width: 576px) {
+  .main_project {
+    padding: 0;
+  }
+}
 
+.footer_project {
+  background-color: #060506;
+}
+@media (max-width: 576px) {
+  .footer_project {
+    margin: 70px 0 0;
+  }
+}
 .footer__main {
   padding: 120px 0 90px;
 }

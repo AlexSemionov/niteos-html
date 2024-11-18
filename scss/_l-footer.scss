@@ -1,4 +1,12 @@
 .footer {
+  &_project {
+    background-color: #060506;
+
+    @include mobile {
+      margin: 70px 0 0;
+    }
+  }
+
   &__main {
     padding: 120px 0 90px;
 
