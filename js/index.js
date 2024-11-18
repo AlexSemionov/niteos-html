@@ -88,3 +88,12 @@ function updateFasade(link) {
     headerInfoContactsFasade.append(fasadeLink);
   }
 }
+
+const projectInfoSwiper = new Swiper('.project__info-gallery .swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.project__info-controls-next',
+    prevEl: '.project__info-controls-prev',
+  },
+});

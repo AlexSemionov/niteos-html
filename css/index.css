@@ -2694,3 +2694,206 @@ img {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.project__info {
+  margin: 0 0 30px;
+}
+.project__info-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin: 0 0 40px;
+}
+@media (max-width: 992px) {
+  .project__info-block {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 740px) {
+  .project__info-block {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .project__info-block_gallery {
+    display: block;
+  }
+}
+.project__info-block_gallery > * {
+  position: relative;
+}
+.project__info-block-left {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  flex: 1 1 580px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .project__info-block-left {
+    font-size: 14px;
+    line-height: 172%;
+  }
+}
+@media (max-width: 740px) {
+  .project__info-block-left {
+    flex: 0 1 auto;
+  }
+}
+@media (max-width: 740px) {
+  .project__info-block-left_empty {
+    display: none;
+  }
+}
+.project__info-block-right {
+  flex: 1 1 745px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .project__info-block-right {
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+@media (max-width: 740px) {
+  .project__info-block-right {
+    flex: 0 1 auto;
+  }
+}
+.project__info-block-right > * {
+  margin: 0 0 30px;
+}
+.project__info-block-right > *:last-child {
+  margin: 0;
+}
+.project__info-id {
+  opacity: 0.6;
+}
+.project__info-title {
+  text-transform: uppercase;
+}
+.project__info-title_about {
+  text-transform: none;
+}
+.project__info-text_about {
+  font-size: 22px;
+}
+@media (max-width: 992px) {
+  .project__info-text_about {
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .project__info-text_about {
+    font-size: 16px;
+  }
+}
+.project__info-list {
+  padding-left: 30px;
+}
+@media (max-width: 992px) {
+  .project__info-list {
+    padding-left: 22px;
+  }
+}
+.project__info-gallery {
+  position: relative;
+  display: block;
+  margin: 0;
+  aspect-ratio: 81/54;
+}
+.project__info-gallery .swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.project__info-gallery-slide-image {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 576px) {
+  .project__info-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px !important;
+  }
+}
+.project__info-controls-next, .project__info-controls-prev {
+  position: absolute;
+  top: 50%;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
+  border-radius: 35px;
+  transition: background-color ease-in-out 0.1s, transform ease-in-out 0.1s;
+  transform: translate3d(0, -50%, 0);
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .project__info-controls-next, .project__info-controls-prev {
+    position: static;
+    width: 35px;
+    height: 35px;
+    transform: none;
+  }
+}
+.project__info-controls-next:active, .project__info-controls-prev:active {
+  transform: scale(0.96) translate3d(0, -50%, 0);
+}
+@media (max-width: 576px) {
+  .project__info-controls-next:active, .project__info-controls-prev:active {
+    transform: scale(0.96);
+  }
+}
+.project__info-controls-next::before, .project__info-controls-prev::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 16px;
+  background: url(../assets/icons/prev.svg) left center no-repeat;
+  transition: filter ease-in-out 0.1s;
+}
+.project__info-controls-next {
+  right: 20px;
+  background-color: white;
+}
+.project__info-controls-next:hover {
+  background-color: #1a181d;
+}
+.project__info-controls-next::before {
+  filter: brightness(0.2);
+  transform: rotate(180deg);
+}
+.project__info-controls-next:hover::before {
+  filter: brightness(1);
+}
+.project__info-controls-prev {
+  left: 20px;
+  background-color: #1a181d;
+}
+.project__info-controls-prev:hover {
+  background-color: white;
+}
+.project__info-controls-prev::before {
+  filter: brightness(1);
+}
+.project__info-controls-prev:hover::before {
+  filter: brightness(0.2);
+}

@@ -166,4 +166,229 @@
       }
     }
   }
+
+  &__info {
+    margin: 0 0 30px;
+
+    &-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin: 0 0 40px;
+
+      @include laptop {
+        margin-bottom: 30px;
+      }
+
+      @include tabletsm {
+        flex-direction: column;
+      }
+
+      &_gallery {
+        @include tablet {
+          display: block;
+        }
+
+        & > * {
+          position: relative;
+        }
+      }
+
+      &-left {
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        flex: 1 1 580px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 133%;
+        color: #fff;
+
+        @include laptop {
+          font-size: 14px;
+          line-height: 172%;
+        }
+
+        @include tabletsm {
+          flex: 0 1 auto;
+        }
+
+        &_empty {
+          @include tabletsm {
+            display: none;
+          }
+        }
+      }
+
+      &-right {
+        flex: 1 1 745px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 133%;
+        color: #fff;
+
+        @include laptop {
+          font-size: 14px;
+          line-height: 150%;
+        }
+
+        @include tabletsm {
+          flex: 0 1 auto;
+        }
+
+        & > * {
+          margin: 0 0 30px;
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &-id {
+      opacity: 0.6;
+    }
+
+    &-title {
+      text-transform: uppercase;
+
+      &_about {
+        text-transform: none;
+      }
+    }
+
+    &-text {
+      &_about {
+        font-size: 22px;
+
+        @include laptop {
+          font-size: 18px;
+        }
+
+        @include mobile {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-list {
+      padding-left: 30px;
+
+      @include laptop {
+        padding-left: 22px;
+      }
+    }
+
+    &-gallery {
+      position: relative;
+      display: block;
+      margin: 0;
+      aspect-ratio: 81 / 54;
+
+      & .swiper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      &-slide {
+        &-image {
+          display: block;
+          max-width: 100%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    &-controls {
+      @include mobile {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px !important;
+      }
+
+      &-next,
+      &-prev {
+        position: absolute;
+        top: 50%;
+        z-index: 50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        padding: 0;
+        box-sizing: border-box;
+        border: 1px solid #ffffff;
+        border-radius: 35px;
+        transition: background-color ease-in-out 0.1s, transform ease-in-out 0.1s;
+        transform: translate3d(0, -50%, 0);
+        cursor: pointer;
+
+        @include mobile {
+          position: static;
+          width: 35px;
+          height: 35px;
+          transform: none;
+        }
+
+        &:active {
+          transform: scale(0.96) translate3d(0, -50%, 0);
+
+          @include mobile {
+            transform: scale(0.96);
+          }
+        }
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 12px;
+          height: 16px;
+          background: url(../assets/icons/prev.svg) left center no-repeat;
+          transition: filter ease-in-out 0.1s;
+        }
+      }
+
+      &-next {
+        right: 20px;
+        background-color: rgba($color: #ffffff, $alpha: 1);
+
+        &:hover {
+          background-color: rgba($color: #1a181d, $alpha: 1);
+        }
+
+        &::before {
+          filter: brightness(0.2);
+          transform: rotate(180deg);
+        }
+
+        &:hover::before {
+          filter: brightness(1);
+        }
+      }
+
+      &-prev {
+        left: 20px;
+        background-color: rgba($color: #1a181d, $alpha: 1);
+
+        &:hover {
+          background-color: rgba($color: #ffffff, $alpha: 1);
+        }
+
+        &::before {
+          filter: brightness(1);
+        }
+
+        &:hover::before {
+          filter: brightness(0.2);
+        }
+      }
+    }
+  }
 }
