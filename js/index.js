@@ -97,3 +97,38 @@ const projectInfoSwiper = new Swiper('.project__info-gallery .swiper', {
     prevEl: '.project__info-controls-prev',
   },
 });
+
+const projectGallerySwiper = new Swiper('.project-gallery__slider .swiper', {
+  init: false,
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  navigation: {
+    nextEl: '.project-gallery__controls-next',
+    prevEl: '.project-gallery__controls-prev',
+  },
+});
+
+projectGallerySwiper.on('init', function () {
+  const prevSlideImg = [
+    ...document.querySelectorAll('.project-gallery .swiper-slide img'),
+  ].reverse()[0];
+  const nextSlideImg = document.querySelector('.project-gallery .swiper-slide-next img');
+  const prevImg = document.querySelector('.project-gallery__slider-prev-image');
+  const nextImg = document.querySelector('.project-gallery__slider-next-image');
+
+  if (prevSlideImg && prevImg) prevImg.setAttribute('src', prevSlideImg.getAttribute('src'));
+  if (nextSlideImg && nextImg) nextImg.setAttribute('src', nextSlideImg.getAttribute('src'));
+});
+
+projectGallerySwiper.on('slideChangeTransitionStart', function () {
+  const prevSlideImg = document.querySelector('.project-gallery .swiper-slide-prev img');
+  const nextSlideImg = document.querySelector('.project-gallery .swiper-slide-next img');
+  const prevImg = document.querySelector('.project-gallery__slider-prev-image');
+  const nextImg = document.querySelector('.project-gallery__slider-next-image');
+
+  if (prevSlideImg && prevImg) prevImg.setAttribute('src', prevSlideImg.getAttribute('src'));
+  if (nextSlideImg && nextImg) nextImg.setAttribute('src', nextSlideImg.getAttribute('src'));
+});
+
+projectGallerySwiper.init();

@@ -2897,3 +2897,203 @@ img {
 .project__info-controls-prev:hover::before {
   filter: brightness(0.2);
 }
+
+.project-gallery {
+  padding: 0 0 105px;
+}
+@media (max-width: 576px) {
+  .project-gallery {
+    padding: 0 0 30px;
+  }
+}
+.project-gallery__heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 0 0 70px;
+}
+@media (max-width: 992px) {
+  .project-gallery__heading {
+    margin: 0 0 50px;
+  }
+}
+@media (max-width: 576px) {
+  .project-gallery__heading {
+    margin: 0 0 20px;
+  }
+}
+.project-gallery__title {
+  margin: 0;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 143%;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .project-gallery__title {
+    font-size: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .project-gallery__title {
+    font-size: 22px;
+  }
+}
+.project-gallery__controls {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 14px;
+}
+.project-gallery__controls-next, .project-gallery__controls-prev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid #ffffff;
+  border-radius: 35px;
+  transition: background-color ease-in-out 0.1s, transform ease-in-out 0.1s;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .project-gallery__controls-next, .project-gallery__controls-prev {
+    width: 35px;
+    height: 35px;
+    transform: none;
+  }
+}
+.project-gallery__controls-next:active, .project-gallery__controls-prev:active {
+  transform: scale(0.96);
+}
+.project-gallery__controls-next::before, .project-gallery__controls-prev::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 16px;
+  background: url(../assets/icons/prev.svg) left center no-repeat;
+  transition: filter ease-in-out 0.1s;
+}
+.project-gallery__controls-next {
+  background-color: white;
+}
+.project-gallery__controls-next:hover {
+  background-color: #1a181d;
+}
+.project-gallery__controls-next::before {
+  filter: brightness(0.2);
+  transform: rotate(180deg);
+}
+.project-gallery__controls-next:hover::before {
+  filter: brightness(1);
+}
+.project-gallery__controls-prev {
+  background-color: #1a181d;
+}
+.project-gallery__controls-prev:hover {
+  background-color: white;
+}
+.project-gallery__controls-prev::before {
+  filter: brightness(1);
+}
+.project-gallery__controls-prev:hover::before {
+  filter: brightness(0.2);
+}
+.project-gallery__slider {
+  position: relative;
+  padding: 0 288px;
+}
+@media (max-width: 1200px) {
+  .project-gallery__slider {
+    padding: 0 210px;
+  }
+}
+@media (max-width: 992px) {
+  .project-gallery__slider {
+    padding: 0;
+  }
+}
+@media (max-width: 992px) {
+  .project-gallery__slider-thumbs {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 20px 0 0;
+  }
+}
+.project-gallery__slider-prev, .project-gallery__slider-next {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+@media (max-width: 992px) {
+  .project-gallery__slider-prev, .project-gallery__slider-next {
+    position: static;
+    flex: 0 1 258px;
+    gap: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .project-gallery__slider-prev, .project-gallery__slider-next {
+    gap: 10px;
+  }
+}
+.project-gallery__slider-prev-image, .project-gallery__slider-next-image {
+  display: block;
+  max-width: 100%;
+  width: 258px;
+  aspect-ratio: 258/205;
+  border-radius: 16px;
+  background-color: #1f1c24;
+}
+@media (max-width: 1200px) {
+  .project-gallery__slider-prev-image, .project-gallery__slider-next-image {
+    width: 180px;
+  }
+}
+@media (max-width: 992px) {
+  .project-gallery__slider-prev-image, .project-gallery__slider-next-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
+.project-gallery__slider-prev-text, .project-gallery__slider-next-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 83%;
+  color: #616161;
+  opacity: 0.75;
+}
+@media (max-width: 576px) {
+  .project-gallery__slider-prev-text, .project-gallery__slider-next-text {
+    font-size: 12px;
+  }
+}
+.project-gallery__slider-prev {
+  left: 0;
+  bottom: 0;
+  flex-direction: column-reverse;
+}
+@media (max-width: 992px) {
+  .project-gallery__slider-prev {
+    flex-direction: column;
+  }
+}
+.project-gallery__slider-next {
+  top: 0;
+  right: 0;
+  align-items: flex-end;
+}
+.project-gallery__slide-image {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  aspect-ratio: 75/52;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
