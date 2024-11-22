@@ -122,16 +122,34 @@ projectGallerySwiper.on('init', function () {
 });
 
 projectGallerySwiper.on('slideChangeTransitionStart', function () {
+  const lastSlideImg = [
+    ...document.querySelectorAll('.project-gallery .swiper-slide img'),
+  ].reverse()[0];
   const prevSlideImg = document.querySelector('.project-gallery .swiper-slide-prev img');
   const nextSlideImg = document.querySelector('.project-gallery .swiper-slide-next img');
   const prevImg = document.querySelector('.project-gallery__slider-prev-image');
   const nextImg = document.querySelector('.project-gallery__slider-next-image');
 
   if (prevSlideImg && prevImg) prevImg.setAttribute('src', prevSlideImg.getAttribute('src'));
+  if (!prevSlideImg && lastSlideImg && prevImg)
+    prevImg.setAttribute('src', lastSlideImg.getAttribute('src'));
   if (nextSlideImg && nextImg) nextImg.setAttribute('src', nextSlideImg.getAttribute('src'));
 });
 
 projectGallerySwiper.init();
+
+const prevThumb = document.querySelector('.project-gallery__slider-prev');
+const nextThumb = document.querySelector('.project-gallery__slider-next');
+
+if (prevThumb && nextThumb) {
+  prevThumb.addEventListener('click', () => {
+    projectGallerySwiper.slidePrev();
+  });
+
+  nextThumb.addEventListener('click', () => {
+    projectGallerySwiper.slideNext();
+  });
+}
 
 const projectWorkersSwiper = new Swiper('.project-workers .swiper', {
   slidesPerView: 1,
