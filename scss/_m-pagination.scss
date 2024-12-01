@@ -1,0 +1,99 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+
+  @include mobile {
+    gap: 24px;
+  }
+
+  &__next,
+  &__prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+    border-radius: 35px;
+    transition: background-color ease-in-out 0.1s, transform ease-in-out 0.1s;
+    cursor: pointer;
+
+    @include mobile {
+      width: 35px;
+      height: 35px;
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 16px;
+      background: url(../assets/icons/prev.svg) left center no-repeat;
+      transition: filter ease-in-out 0.1s;
+    }
+  }
+
+  &__next {
+    background-color: rgba($color: #ffffff, $alpha: 1);
+
+    &:hover {
+      background-color: rgba($color: #333437, $alpha: 1);
+    }
+
+    &::before {
+      filter: brightness(0.2);
+      transform: rotate(180deg);
+    }
+
+    &:hover::before {
+      filter: brightness(1);
+    }
+  }
+
+  &__prev {
+    background-color: rgba($color: #333437, $alpha: 1);
+
+    &:hover {
+      background-color: rgba($color: #ffffff, $alpha: 1);
+    }
+
+    &::before {
+      filter: brightness(1);
+    }
+
+    &:hover::before {
+      filter: brightness(0.2);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+    @include mobile {
+      gap: 16px;
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 20px;
+      text-align: center;
+      color: #fff;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+}
