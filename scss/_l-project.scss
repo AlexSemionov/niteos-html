@@ -229,12 +229,11 @@
         flex: 1 1 745px;
         font-weight: 400;
         font-size: 18px;
-        line-height: 133%;
+        line-height: 150%;
         color: #fff;
 
         @include laptop {
           font-size: 14px;
-          line-height: 150%;
         }
 
         @include tabletsm {
@@ -266,6 +265,7 @@
     &-text {
       &_about {
         font-size: 22px;
+        line-height: 150%;
 
         @include laptop {
           font-size: 18px;

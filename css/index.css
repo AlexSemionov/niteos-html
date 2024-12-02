@@ -218,6 +218,7 @@ img {
   }
 }
 .header_project .container {
+  max-width: 1360px;
   padding: 20px 45px;
   border-radius: 64px;
   background-color: #000;
@@ -2953,13 +2954,12 @@ img {
   flex: 1 1 745px;
   font-weight: 400;
   font-size: 18px;
-  line-height: 133%;
+  line-height: 150%;
   color: #fff;
 }
 @media (max-width: 992px) {
   .project__info-block-right {
     font-size: 14px;
-    line-height: 150%;
   }
 }
 @media (max-width: 740px) {
@@ -2984,6 +2984,7 @@ img {
 }
 .project__info-text_about {
   font-size: 22px;
+  line-height: 150%;
 }
 @media (max-width: 992px) {
   .project__info-text_about {
