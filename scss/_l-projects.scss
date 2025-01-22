@@ -315,6 +315,34 @@
     }
   }
 
+  &_employe &__top {
+    @include laptop {
+      margin: 0 0 40px;
+    }
+
+    &-info {
+      &-text {
+        max-width: none;
+        font-weight: 600;
+        text-transform: none;
+
+        @include laptop {
+          font-size: 26px;
+        }
+      }
+
+      &-controls {
+        top: 185px;
+
+        @include laptop {
+          top: 0;
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+
   &__slider {
     &-slide {
       display: flex;

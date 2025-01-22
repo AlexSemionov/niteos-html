@@ -13,7 +13,10 @@
   border: 1px solid #fff;
   border-radius: 48px;
   background-color: rgba($color: #1a181d, $alpha: 1);
-  transition: all ease-in-out 0.1s;
+  transition-property: color, background-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  will-change: color, background-color;
   cursor: pointer;
 
   @include laptop {
