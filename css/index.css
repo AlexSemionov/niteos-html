@@ -207,6 +207,65 @@ img {
   }
 }
 
+.button {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 58px;
+  padding: 10px 36px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 48px;
+  background-color: #1a181d;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .button {
+    height: 45px;
+    padding: 10px 28px;
+    font-weight: 500;
+    font-size: 13px;
+  }
+}
+.button:hover {
+  color: #1a181d;
+  background-color: #ffffff;
+}
+.button:active {
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
+}
+.button::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  height: 58px;
+  width: 58px;
+  border-radius: 48px;
+  background: url(../assets/icons/arrow.svg) center no-repeat;
+  background-color: #ffffff;
+}
+@media (max-width: 992px) {
+  .button::after {
+    height: 45px;
+    width: 45px;
+  }
+}
+
 .header {
   position: absolute;
   top: 42px;
@@ -5187,4 +5246,251 @@ img {
 }
 .employees__card-more-link:hover::before {
   background-image: url(../assets/icons/plus.svg);
+}
+
+.employe {
+  padding: 171px 0 0;
+}
+@media (max-width: 992px) {
+  .employe {
+    padding: 116px 0 0;
+  }
+}
+@media (max-width: 576px) {
+  .employe {
+    padding: 112px 0 0;
+  }
+}
+.employe__content {
+  position: relative;
+  min-height: 700px;
+  padding-right: 550px;
+}
+@media (max-width: 1200px) {
+  .employe__content {
+    min-height: 556px;
+    padding-right: 440px;
+  }
+}
+@media (max-width: 992px) {
+  .employe__content {
+    min-height: 476px;
+    padding-right: 380px;
+  }
+}
+@media (max-width: 768px) {
+  .employe__content {
+    min-height: auto;
+    padding-right: 0;
+  }
+}
+.employe__title {
+  max-width: calc(100% - 340px);
+  margin: 0 0 30px;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 143%;
+  color: #fff;
+}
+@media (max-width: 1200px) {
+  .employe__title {
+    max-width: none;
+  }
+}
+@media (max-width: 992px) {
+  .employe__title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 576px) {
+  .employe__title {
+    margin: 0 0 20px;
+    font-size: 28px;
+  }
+}
+.employe__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  margin: 0 0 30px;
+  padding: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  color: #fff;
+  list-style-type: none;
+  opacity: 0.6;
+}
+@media (max-width: 992px) {
+  .employe__info {
+    gap: 6px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .employe__info {
+    margin: 0 0 20px;
+    font-size: 14px;
+  }
+}
+.employe__photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 530px;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .employe__photo {
+    max-width: 420px;
+  }
+}
+@media (max-width: 992px) {
+  .employe__photo {
+    max-width: 360px;
+  }
+}
+@media (max-width: 768px) {
+  .employe__photo {
+    position: static;
+    max-width: 420px;
+  }
+}
+.employe__photo-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 53/70;
+  border-radius: 20px;
+}
+.employe__details {
+  position: absolute;
+  top: 0;
+  right: 550px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 10px;
+  min-height: 255px;
+  width: 320px;
+  margin: 0;
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #333437;
+}
+@media (max-width: 1200px) {
+  .employe__details {
+    position: static;
+    min-height: auto;
+    width: 100%;
+    margin: 30px 0 0;
+  }
+}
+@media (max-width: 992px) {
+  .employe__details {
+    padding: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .employe__details {
+    margin: 20px 0 0;
+  }
+}
+.employe__details-speed, .employe__details-quality, .employe__details-price {
+  padding-left: 19px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+.employe__details-speed {
+  background-image: url(../assets/icons/flash.svg);
+}
+.employe__details-quality {
+  background-image: url(../assets/icons/shield-checkmark-sharp.svg);
+}
+.employe__details-price {
+  background-image: url(../assets/icons/coin.svg);
+}
+.employe__description {
+  margin: 80px 0 30px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  color: #fff;
+}
+@media (max-width: 1200px) {
+  .employe__description {
+    margin: 30px 0;
+  }
+}
+@media (max-width: 992px) {
+  .employe__description {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .employe__description {
+    margin: 20px 0;
+    font-size: 14px;
+  }
+}
+.employe__subtitle {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .employe__subtitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .employe__subtitle {
+    font-size: 14px;
+  }
+}
+.employe__skills {
+  margin: 0 0 49px;
+  padding-left: 30px;
+}
+@media (max-width: 992px) {
+  .employe__skills {
+    margin: 0 0 40px;
+  }
+}
+@media (max-width: 576px) {
+  .employe__skills {
+    margin: 0 0 30px;
+  }
+}
+.employe__skills-item {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 133%;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .employe__skills-item {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .employe__skills-item {
+    font-size: 14px;
+  }
 }
