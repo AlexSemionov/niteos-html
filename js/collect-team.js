@@ -175,7 +175,9 @@ function updateTeamCards() {
       const isCloseButton = event.target.classList.contains(
         'collect-team__team-employe-delete-button'
       );
-      const isManager = card.id === collectTeamObj.manager.id;
+      const isManager =
+        collectTeamObj.manager == null ? false : card.id === collectTeamObj.manager.id;
+      console.log(isManager);
       if (isCloseButton && isManager) deleteManager(card);
       if (isCloseButton && !isManager) deleteEmploye(card);
     });
