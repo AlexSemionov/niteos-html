@@ -1,3 +1,5 @@
+import './collect-team.js';
+
 const catalogSwiper = new Swiper('.catalog-slider .swiper', {
   slidesPerView: 1,
   spaceBetween: 20,
