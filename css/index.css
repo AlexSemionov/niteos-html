@@ -6540,7 +6540,7 @@ img {
   font-size: 16px;
   line-height: 150%;
 }
-.collect-team__card-info-details-speed, .collect-team__card-info-details-quality, .collect-team__card-info-details-price {
+.collect-team__card-info-details-speed, .collect-team__card-info-details-experience, .collect-team__card-info-details-price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6575,7 +6575,7 @@ img {
 .collect-team__card-info-details-speed .collect-team__card-info-details-rating-point {
   background-image: url(../assets/icons/flash.svg);
 }
-.collect-team__card-info-details-quality .collect-team__card-info-details-rating-point {
+.collect-team__card-info-details-experience .collect-team__card-info-details-rating-point {
   background-image: url(../assets/icons/star.svg);
 }
 .collect-team__card-info-details-price .collect-team__card-info-details-rating-point {

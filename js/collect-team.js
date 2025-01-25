@@ -32,16 +32,49 @@ if (collectTeamObj.blockEl) {
 collectTeamObj.managerCardEls.forEach((managerCardEl) => {
   managerCardEl.addEventListener('click', (event) => {
     const isAddButton = event.target.classList.contains('collect-team__card-add-button');
-    if (isAddButton) addManager(managerCardEl);
+    if (isAddButton) {
+      getCollectTeamCardData(event.currentTarget);
+      addManager(event.currentTarget);
+    }
   });
 });
 
 collectTeamObj.employeCardEls.forEach((employeCardEl) => {
   employeCardEl.addEventListener('click', (event) => {
     const isAddButton = event.target.classList.contains('collect-team__card-add-button');
-    if (isAddButton) addEmploye(event.currentTarget);
+    if (isAddButton) {
+      getCollectTeamCardData(event.currentTarget);
+      addEmploye(event.currentTarget);
+    }
   });
 });
+
+function getCollectTeamCardData(employeCardEl) {
+  if (!employeCardEl) return null;
+
+  const elements = {
+    card: employeCardEl,
+    name: employeCardEl.querySelector('.collect-team__card-info-name'),
+    role: employeCardEl.querySelector('.collect-team__card-info-role'),
+    image: employeCardEl.querySelector('.collect-team__card-photo-image'),
+    speed: employeCardEl.querySelector('.collect-team__card-info-details-speed'),
+    experience: employeCardEl.querySelector('.collect-team__card-info-details-experience'),
+    price: employeCardEl.querySelector('.collect-team__card-info-details-price'),
+  };
+
+  const data = {
+    id: elements.card.dataset.id || '',
+    name: elements.name.dataset.name || '',
+    role: elements.role.dataset.role || '',
+    imageSrc: elements.image.dataset.image || '',
+    speed: elements.speed.dataset.rating || '',
+    experience: elements.experience.dataset.rating || '',
+    price: elements.price.dataset.rating || '',
+  };
+
+  console.log(data);
+  return data;
+}
 
 function updateCollectTeam() {
   if (collectTeamObj.managersEl && collectTeamObj.employeesEl) {

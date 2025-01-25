@@ -660,7 +660,7 @@
         line-height: 150%;
 
         &-speed,
-        &-quality,
+        &-experience,
         &-price {
           display: flex;
           align-items: center;
@@ -695,7 +695,7 @@
           }
         }
 
-        &-quality &-rating {
+        &-experience &-rating {
           &-point {
             background-image: url(../assets/icons/star.svg);
           }
