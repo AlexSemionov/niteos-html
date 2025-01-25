@@ -373,7 +373,9 @@
         font-size: 16px;
         line-height: 150%;
 
-        &-speed, &-quality, &-price {
+        &-speed,
+        &-experience,
+        &-price {
           padding-left: 19px;
           background-position: left center;
           background-repeat: no-repeat;
@@ -384,12 +386,62 @@
           background-image: url(../assets/icons/flash.svg);
         }
 
-        &-quality {
+        &-experience {
           background-image: url(../assets/icons/shield-checkmark-sharp.svg);
         }
 
         &-price {
+          display: flex;
+          align-items: center;
           background-image: url(../assets/icons/coin.svg);
+        }
+
+        &-rating {
+          display: flex;
+          align-items: center;
+
+          &-point {
+            display: block;
+            display: none;
+            width: 14px;
+            aspect-ratio: 1 / 1;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+          }
+        }
+
+        &-price &-rating {
+          &-point {
+            background-image: url(../assets/icons/ruble.svg);
+          }
+        }
+
+        & > *[data-price='1'] &-rating {
+          &-point {
+            &:nth-child(1) {
+              display: block;
+            }
+          }
+        }
+
+        & > *[data-price='2'] &-rating {
+          &-point {
+            &:nth-child(1),
+            &:nth-child(2) {
+              display: block;
+            }
+          }
+        }
+
+        & > *[data-price='3'] &-rating {
+          &-point {
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+              display: block;
+            }
+          }
         }
       }
     }

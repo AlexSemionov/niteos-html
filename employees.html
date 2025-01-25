@@ -200,48 +200,48 @@
             <img class="employees__photo-image" src="" alt="ОБЩЕЕ ФОТО СОТРУДНИКОВ" />
           </figure>
 
-          <section class="collect-team">
+          <section class="collect-team active">
             <div class="collect-team__content">
               <div class="collect-team__progress">
                 <h2 class="collect-team__title">Собери свою команду</h2>
-  
+
                 <div class="collect-team__collect">
                   <button class="collect-team__collect-button button">СОБРАТЬ КОМАНДУ</button>
                 </div>
-  
+
                 <div class="collect-team__description">
                   Вы можете собрать свою уникальную команду специалистов подходящую именно под ваш
                   проект
                 </div>
-  
+
                 <div class="collect-team__steps">
                   <div class="collect-team__step collect-team__step_manager">
                     <div class="collect-team__step-id">01</div>
                     <div class="collect-team__step-text">Выберите менеджера</div>
                   </div>
-  
+
                   <div class="collect-team__step collect-team__step_worker">
                     <div class="collect-team__step-id">02</div>
                     <div class="collect-team__step-text">Выберите специалиста</div>
                   </div>
-  
+
                   <div class="collect-team__step collect-team__step_worker">
                     <div class="collect-team__step-id">03</div>
                     <div class="collect-team__step-text">Выберите специалиста</div>
                   </div>
-  
+
                   <div class="collect-team__step collect-team__step_worker">
                     <div class="collect-team__step-id">04</div>
                     <div class="collect-team__step-text">Выберите специалиста</div>
                   </div>
-  
+
                   <div class="collect-team__step collect-team__step_worker">
                     <div class="collect-team__step-id">05</div>
                     <div class="collect-team__step-text">Выберите специалиста</div>
                   </div>
                 </div>
               </div>
-  
+
               <div class="collect-team__team">
                 <figure class="collect-team__team-figure">
                   <img
@@ -250,9 +250,9 @@
                     alt="employes"
                   />
                 </figure>
-  
+
                 <div class="collect-team__team-employees"></div>
-  
+
                 <div class="collect-team__team-employe collect-team__team-employe_total">
                   <div class="collect-team__team-employe-details">
                     <figure class="collect-team__team-employe-details-photo">
@@ -267,29 +267,19 @@
                       <div class="collect-team__team-employe-details-block-info">2 специалиста</div>
                     </div>
                   </div>
-  
+
                   <ul class="collect-team__team-employe-info">
                     <li
                       class="collect-team__team-employe-info-item collect-team__team-employe-info-item_speed"
                       data-rating=""
                     >
-                      <div class="collect-team__team-employe-info-item-text">Скорость:</div>
-                      <div class="collect-team__team-employe-info-item-rating">
-                        <span class="collect-team__team-employe-info-item-rating-point"></span>
-                        <span class="collect-team__team-employe-info-item-rating-point"></span>
-                        <span class="collect-team__team-employe-info-item-rating-point"></span>
-                      </div>
+                      Скорость:
                     </li>
                     <li
                       class="collect-team__team-employe-info-item collect-team__team-employe-info-item_experience"
                       data-rating=""
                     >
-                      <div class="collect-team__team-employe-info-item-text">Опыт:</div>
-                      <div class="collect-team__team-employe-info-item-rating">
-                        <span class="collect-team__team-employe-info-item-rating-point"></span>
-                        <span class="collect-team__team-employe-info-item-rating-point"></span>
-                        <span class="collect-team__team-employe-info-item-rating-point"></span>
-                      </div>
+                      Опыт:
                     </li>
                     <li
                       class="collect-team__team-employe-info-item collect-team__team-employe-info-item_price"
@@ -304,7 +294,7 @@
                     </li>
                   </ul>
                 </div>
-  
+
                 <div class="collect-team__team-order">
                   <h3 class="collect-team__team-order-title">Почти готово!</h3>
                   <div class="collect-team__team-order-text">
@@ -327,38 +317,31 @@
                   </form>
                 </div>
               </div>
-  
+
               <div class="collect-team__managers">
-                <div class="collect-team__card" id="manager1">
+                <div class="collect-team__card" data-id="manager1" id="manager1">
                   <figure class="collect-team__card-photo">
                     <img
                       class="collect-team__card-photo-image"
                       src="./assets/employees/employe-7.webp"
+                      data-image="./assets/employees/employe-7.webp"
                       alt="project"
                     />
                   </figure>
-  
+
                   <div class="collect-team__card-info">
-                    <div class="collect-team__card-info-name">Даниил Федоров</div>
-                    <div class="collect-team__card-info-role">Менеджер</div>
+                    <div class="collect-team__card-info-name" data-name="Даниил Федоров">
+                      Даниил Федоров
+                    </div>
+                    <div class="collect-team__card-info-role" data-role="Менеджер">Менеджер</div>
                     <div class="collect-team__card-info-experience">Опыт работы: 3 года</div>
                     <div class="collect-team__card-info-projects">Принял участие в N проектах</div>
                     <ul class="collect-team__card-info-details">
-                      <li class="collect-team__card-info-details-speed" data-rating="1">
-                        <div class="collect-team__card-info-details-text">Стоимость:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-speed" data-rating="10">
+                        <div class="collect-team__card-info-details-text">Скорость: 10/10</div>
                       </li>
-                      <li class="collect-team__card-info-details-quality" data-rating="3">
-                        <div class="collect-team__card-info-details-text">Качество:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-quality" data-rating="9">
+                        <div class="collect-team__card-info-details-text">Опыт: 9/10</div>
                       </li>
                       <li class="collect-team__card-info-details-price" data-rating="2">
                         <div class="collect-team__card-info-details-text">Цена:</div>
@@ -370,42 +353,35 @@
                       </li>
                     </ul>
                   </div>
-  
+
                   <div class="collect-team__card-add">
                     <button class="collect-team__card-add-button"></button>
                   </div>
                 </div>
-  
-                <div class="collect-team__card" id="manager2">
+
+                <div class="collect-team__card" data-id="manager2" id="manager2">
                   <figure class="collect-team__card-photo">
                     <img
                       class="collect-team__card-photo-image"
                       src="./assets/employees/employe-1.webp"
+                      data-image="./assets/employees/employe-1.webp"
                       alt="project"
                     />
                   </figure>
-  
+
                   <div class="collect-team__card-info">
-                    <div class="collect-team__card-info-name">Даниил Федоров</div>
-                    <div class="collect-team__card-info-role">Менеджер</div>
+                    <div class="collect-team__card-info-name" data-name="Даниил Федоров">
+                      Даниил Федоров
+                    </div>
+                    <div class="collect-team__card-info-role" data-role="Менеджер">Менеджер</div>
                     <div class="collect-team__card-info-experience">Опыт работы: 3 года</div>
                     <div class="collect-team__card-info-projects">Принял участие в N проектах</div>
                     <ul class="collect-team__card-info-details">
-                      <li class="collect-team__card-info-details-speed" data-rating="1">
-                        <div class="collect-team__card-info-details-text">Стоимость:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-speed" data-rating="5">
+                        <div class="collect-team__card-info-details-text">Скорость: 5/10</div>
                       </li>
-                      <li class="collect-team__card-info-details-quality" data-rating="1">
-                        <div class="collect-team__card-info-details-text">Качество:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-quality" data-rating="5">
+                        <div class="collect-team__card-info-details-text">Опыт: 5/10</div>
                       </li>
                       <li class="collect-team__card-info-details-price" data-rating="1">
                         <div class="collect-team__card-info-details-text">Цена:</div>
@@ -417,42 +393,35 @@
                       </li>
                     </ul>
                   </div>
-  
+
                   <div class="collect-team__card-add">
                     <button class="collect-team__card-add-button"></button>
                   </div>
                 </div>
-  
-                <div class="collect-team__card" id="manager3">
+
+                <div class="collect-team__card" data-id="manager3" id="manager3">
                   <figure class="collect-team__card-photo">
                     <img
                       class="collect-team__card-photo-image"
                       src="./assets/employees/employe-2.webp"
+                      data-image="./assets/employees/employe-2.webp"
                       alt="project"
                     />
                   </figure>
-  
+
                   <div class="collect-team__card-info">
-                    <div class="collect-team__card-info-name">Даниил Федоров</div>
-                    <div class="collect-team__card-info-role">Менеджер</div>
+                    <div class="collect-team__card-info-name" data-name="Даниил Федоров">
+                      Даниил Федоров
+                    </div>
+                    <div class="collect-team__card-info-role" data-role="Менеджер">Менеджер</div>
                     <div class="collect-team__card-info-experience">Опыт работы: 3 года</div>
                     <div class="collect-team__card-info-projects">Принял участие в N проектах</div>
                     <ul class="collect-team__card-info-details">
-                      <li class="collect-team__card-info-details-speed" data-rating="2">
-                        <div class="collect-team__card-info-details-text">Стоимость:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-speed" data-rating="10">
+                        <div class="collect-team__card-info-details-text">Скорость: 10/10</div>
                       </li>
-                      <li class="collect-team__card-info-details-quality" data-rating="2">
-                        <div class="collect-team__card-info-details-text">Качество:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-quality" data-rating="9">
+                        <div class="collect-team__card-info-details-text">Опыт: 9/10</div>
                       </li>
                       <li class="collect-team__card-info-details-price" data-rating="2">
                         <div class="collect-team__card-info-details-text">Цена:</div>
@@ -464,42 +433,35 @@
                       </li>
                     </ul>
                   </div>
-  
+
                   <div class="collect-team__card-add">
                     <button class="collect-team__card-add-button"></button>
                   </div>
                 </div>
-  
-                <div class="collect-team__card" id="manager4">
+
+                <div class="collect-team__card" data-id="manager4" id="manager4">
                   <figure class="collect-team__card-photo">
                     <img
                       class="collect-team__card-photo-image"
                       src="./assets/employees/employe-3.webp"
+                      data-image="./assets/employees/employe-3.webp"
                       alt="project"
                     />
                   </figure>
-  
+
                   <div class="collect-team__card-info">
-                    <div class="collect-team__card-info-name">Даниил Федоров</div>
-                    <div class="collect-team__card-info-role">Менеджер</div>
+                    <div class="collect-team__card-info-name" data-name="Даниил Федоров">
+                      Даниил Федоров
+                    </div>
+                    <div class="collect-team__card-info-role" data-role="Менеджер">Менеджер</div>
                     <div class="collect-team__card-info-experience">Опыт работы: 3 года</div>
                     <div class="collect-team__card-info-projects">Принял участие в N проектах</div>
                     <ul class="collect-team__card-info-details">
-                      <li class="collect-team__card-info-details-speed" data-rating="3">
-                        <div class="collect-team__card-info-details-text">Стоимость:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-speed" data-rating="10">
+                        <div class="collect-team__card-info-details-text">Скорость: 10/10</div>
                       </li>
-                      <li class="collect-team__card-info-details-quality" data-rating="3">
-                        <div class="collect-team__card-info-details-text">Качество:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-quality" data-rating="9">
+                        <div class="collect-team__card-info-details-text">Опыт: 9/10</div>
                       </li>
                       <li class="collect-team__card-info-details-price" data-rating="3">
                         <div class="collect-team__card-info-details-text">Цена:</div>
@@ -511,44 +473,39 @@
                       </li>
                     </ul>
                   </div>
-  
+
                   <div class="collect-team__card-add">
                     <button class="collect-team__card-add-button"></button>
                   </div>
                 </div>
               </div>
-  
+
               <div class="collect-team__employees">
-                <div class="collect-team__card" id="employe1">
+                <div class="collect-team__card" data-id="employe1" id="employe1">
                   <figure class="collect-team__card-photo">
                     <img
                       class="collect-team__card-photo-image"
                       src="./assets/employees/employe-4.webp"
+                      data-image="./assets/employees/employe-4.webp"
                       alt="project"
                     />
                   </figure>
-  
+
                   <div class="collect-team__card-info">
-                    <div class="collect-team__card-info-name">Даниил Федоров</div>
-                    <div class="collect-team__card-info-role">Менеджер</div>
+                    <div class="collect-team__card-info-name" data-name="Даниил Федоров">
+                      Даниил Федоров
+                    </div>
+                    <div class="collect-team__card-info-role" data-role="Специалист">
+                      Специалист
+                    </div>
                     <div class="collect-team__card-info-experience">Опыт работы: 3 года</div>
                     <div class="collect-team__card-info-projects">Принял участие в N проектах</div>
                     <ul class="collect-team__card-info-details">
-                      <li class="collect-team__card-info-details-speed" data-rating="1">
-                        <div class="collect-team__card-info-details-text">Стоимость:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-speed" data-rating="10">
+                        <div class="collect-team__card-info-details-text">Скорость: 10/10</div>
                       </li>
-                      <li class="collect-team__card-info-details-quality" data-rating="3">
-                        <div class="collect-team__card-info-details-text">Качество:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-quality" data-rating="9">
+                        <div class="collect-team__card-info-details-text">Опыт: 9/10</div>
                       </li>
                       <li class="collect-team__card-info-details-price" data-rating="2">
                         <div class="collect-team__card-info-details-text">Цена:</div>
@@ -560,42 +517,37 @@
                       </li>
                     </ul>
                   </div>
-  
+
                   <div class="collect-team__card-add">
                     <button class="collect-team__card-add-button"></button>
                   </div>
                 </div>
-  
-                <div class="collect-team__card" id="employe2">
+
+                <div class="collect-team__card" data-id="employe2" id="employe2">
                   <figure class="collect-team__card-photo">
                     <img
                       class="collect-team__card-photo-image"
                       src="./assets/employees/employe-5.webp"
+                      data-image="./assets/employees/employe-5.webp"
                       alt="project"
                     />
                   </figure>
-  
+
                   <div class="collect-team__card-info">
-                    <div class="collect-team__card-info-name">Даниил Федоров</div>
-                    <div class="collect-team__card-info-role">Менеджер</div>
+                    <div class="collect-team__card-info-name" data-name="Даниил Федоров">
+                      Даниил Федоров
+                    </div>
+                    <div class="collect-team__card-info-role" data-role="Специалист">
+                      Специалист
+                    </div>
                     <div class="collect-team__card-info-experience">Опыт работы: 3 года</div>
                     <div class="collect-team__card-info-projects">Принял участие в N проектах</div>
                     <ul class="collect-team__card-info-details">
-                      <li class="collect-team__card-info-details-speed" data-rating="1">
-                        <div class="collect-team__card-info-details-text">Стоимость:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-speed" data-rating="5">
+                        <div class="collect-team__card-info-details-text">Скорость: 5/10</div>
                       </li>
-                      <li class="collect-team__card-info-details-quality" data-rating="1">
-                        <div class="collect-team__card-info-details-text">Качество:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-quality" data-rating="5">
+                        <div class="collect-team__card-info-details-text">Опыт: 5/10</div>
                       </li>
                       <li class="collect-team__card-info-details-price" data-rating="1">
                         <div class="collect-team__card-info-details-text">Цена:</div>
@@ -607,42 +559,37 @@
                       </li>
                     </ul>
                   </div>
-  
+
                   <div class="collect-team__card-add">
                     <button class="collect-team__card-add-button"></button>
                   </div>
                 </div>
-  
-                <div class="collect-team__card" id="employe3">
+
+                <div class="collect-team__card" data-id="employe3" id="employe3">
                   <figure class="collect-team__card-photo">
                     <img
                       class="collect-team__card-photo-image"
                       src="./assets/employees/employe-6.webp"
+                      data-image="./assets/employees/employe-6.webp"
                       alt="project"
                     />
                   </figure>
-  
+
                   <div class="collect-team__card-info">
-                    <div class="collect-team__card-info-name">Даниил Федоров</div>
-                    <div class="collect-team__card-info-role">Менеджер</div>
+                    <div class="collect-team__card-info-name" data-name="Даниил Федоров">
+                      Даниил Федоров
+                    </div>
+                    <div class="collect-team__card-info-role" data-role="Специалист">
+                      Специалист
+                    </div>
                     <div class="collect-team__card-info-experience">Опыт работы: 3 года</div>
                     <div class="collect-team__card-info-projects">Принял участие в N проектах</div>
                     <ul class="collect-team__card-info-details">
-                      <li class="collect-team__card-info-details-speed" data-rating="2">
-                        <div class="collect-team__card-info-details-text">Стоимость:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-speed" data-rating="10">
+                        <div class="collect-team__card-info-details-text">Скорость: 10/10</div>
                       </li>
-                      <li class="collect-team__card-info-details-quality" data-rating="2">
-                        <div class="collect-team__card-info-details-text">Качество:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-quality" data-rating="9">
+                        <div class="collect-team__card-info-details-text">Опыт: 9/10</div>
                       </li>
                       <li class="collect-team__card-info-details-price" data-rating="2">
                         <div class="collect-team__card-info-details-text">Цена:</div>
@@ -654,42 +601,37 @@
                       </li>
                     </ul>
                   </div>
-  
+
                   <div class="collect-team__card-add">
                     <button class="collect-team__card-add-button"></button>
                   </div>
                 </div>
-  
-                <div class="collect-team__card" id="employe4">
+
+                <div class="collect-team__card" data-id="employe4" id="employe4">
                   <figure class="collect-team__card-photo">
                     <img
                       class="collect-team__card-photo-image"
                       src="./assets/employees/employe-7.webp"
+                      data-image="./assets/employees/employe-7.webp"
                       alt="project"
                     />
                   </figure>
-  
+
                   <div class="collect-team__card-info">
-                    <div class="collect-team__card-info-name">Даниил Федоров</div>
-                    <div class="collect-team__card-info-role">Менеджер</div>
+                    <div class="collect-team__card-info-name" data-name="Даниил Федоров">
+                      Даниил Федоров
+                    </div>
+                    <div class="collect-team__card-info-role" data-role="Специалист">
+                      Специалист
+                    </div>
                     <div class="collect-team__card-info-experience">Опыт работы: 3 года</div>
                     <div class="collect-team__card-info-projects">Принял участие в N проектах</div>
                     <ul class="collect-team__card-info-details">
-                      <li class="collect-team__card-info-details-speed" data-rating="3">
-                        <div class="collect-team__card-info-details-text">Стоимость:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-speed" data-rating="8">
+                        <div class="collect-team__card-info-details-text">Скорость: 8/10</div>
                       </li>
-                      <li class="collect-team__card-info-details-quality" data-rating="3">
-                        <div class="collect-team__card-info-details-text">Качество:</div>
-                        <div class="collect-team__card-info-details-rating">
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                          <span class="collect-team__card-info-details-rating-point"></span>
-                        </div>
+                      <li class="collect-team__card-info-details-quality" data-rating="8">
+                        <div class="collect-team__card-info-details-text">Опыт: 8/10</div>
                       </li>
                       <li class="collect-team__card-info-details-price" data-rating="3">
                         <div class="collect-team__card-info-details-text">Цена:</div>
@@ -701,7 +643,7 @@
                       </li>
                     </ul>
                   </div>
-  
+
                   <div class="collect-team__card-add">
                     <button class="collect-team__card-add-button"></button>
                   </div>
@@ -742,9 +684,20 @@
                 <div class="employees__card-info-experience">Опыт работы: 3 года</div>
                 <div class="employees__card-info-projects">Принял участие в N проектах</div>
                 <ul class="employees__card-info-details">
-                  <li class="employees__card-info-details-speed">Скорость: 10/10</li>
-                  <li class="employees__card-info-details-quality">Качество: 9/10</li>
-                  <li class="employees__card-info-details-price">Цена: 10 000₽</li>
+                  <li class="employees__card-info-details-speed" data-speed="10">
+                    <div class="employees__card-info-details-text">Скорость: 10/10</div>
+                  </li>
+                  <li class="employees__card-info-details-experience" data-experience="9">
+                    <div class="employees__card-info-details-text">Опыт: 9/10</div>
+                  </li>
+                  <li class="employees__card-info-details-price" data-price="3">
+                    <div class="employees__card-info-details-text">Цена:</div>
+                    <div class="employees__card-info-details-rating">
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
@@ -768,9 +721,20 @@
                 <div class="employees__card-info-experience">Опыт работы: 3 года</div>
                 <div class="employees__card-info-projects">Принял участие в N проектах</div>
                 <ul class="employees__card-info-details">
-                  <li class="employees__card-info-details-speed">Скорость: 10/10</li>
-                  <li class="employees__card-info-details-quality">Качество: 9/10</li>
-                  <li class="employees__card-info-details-price">Цена: 10 000₽</li>
+                  <li class="employees__card-info-details-speed" data-speed="10">
+                    <div class="employees__card-info-details-text">Скорость: 10/10</div>
+                  </li>
+                  <li class="employees__card-info-details-experience" data-experience="9">
+                    <div class="employees__card-info-details-text">Опыт: 9/10</div>
+                  </li>
+                  <li class="employees__card-info-details-price" data-price="2">
+                    <div class="employees__card-info-details-text">Цена:</div>
+                    <div class="employees__card-info-details-rating">
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
@@ -794,9 +758,20 @@
                 <div class="employees__card-info-experience">Опыт работы: 3 года</div>
                 <div class="employees__card-info-projects">Принял участие в N проектах</div>
                 <ul class="employees__card-info-details">
-                  <li class="employees__card-info-details-speed">Скорость: 10/10</li>
-                  <li class="employees__card-info-details-quality">Качество: 9/10</li>
-                  <li class="employees__card-info-details-price">Цена: 10 000₽</li>
+                  <li class="employees__card-info-details-speed" data-speed="10">
+                    <div class="employees__card-info-details-text">Скорость: 10/10</div>
+                  </li>
+                  <li class="employees__card-info-details-experience" data-experience="9">
+                    <div class="employees__card-info-details-text">Опыт: 9/10</div>
+                  </li>
+                  <li class="employees__card-info-details-price" data-price="3">
+                    <div class="employees__card-info-details-text">Цена:</div>
+                    <div class="employees__card-info-details-rating">
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
@@ -820,9 +795,20 @@
                 <div class="employees__card-info-experience">Опыт работы: 3 года</div>
                 <div class="employees__card-info-projects">Принял участие в N проектах</div>
                 <ul class="employees__card-info-details">
-                  <li class="employees__card-info-details-speed">Скорость: 10/10</li>
-                  <li class="employees__card-info-details-quality">Качество: 9/10</li>
-                  <li class="employees__card-info-details-price">Цена: 10 000₽</li>
+                  <li class="employees__card-info-details-speed" data-speed="10">
+                    <div class="employees__card-info-details-text">Скорость: 10/10</div>
+                  </li>
+                  <li class="employees__card-info-details-experience" data-experience="9">
+                    <div class="employees__card-info-details-text">Опыт: 9/10</div>
+                  </li>
+                  <li class="employees__card-info-details-price" data-price="2">
+                    <div class="employees__card-info-details-text">Цена:</div>
+                    <div class="employees__card-info-details-rating">
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
@@ -846,9 +832,20 @@
                 <div class="employees__card-info-experience">Опыт работы: 3 года</div>
                 <div class="employees__card-info-projects">Принял участие в N проектах</div>
                 <ul class="employees__card-info-details">
-                  <li class="employees__card-info-details-speed">Скорость: 10/10</li>
-                  <li class="employees__card-info-details-quality">Качество: 9/10</li>
-                  <li class="employees__card-info-details-price">Цена: 10 000₽</li>
+                  <li class="employees__card-info-details-speed" data-speed="10">
+                    <div class="employees__card-info-details-text">Скорость: 10/10</div>
+                  </li>
+                  <li class="employees__card-info-details-experience" data-experience="9">
+                    <div class="employees__card-info-details-text">Опыт: 9/10</div>
+                  </li>
+                  <li class="employees__card-info-details-price" data-price="3">
+                    <div class="employees__card-info-details-text">Цена:</div>
+                    <div class="employees__card-info-details-rating">
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
@@ -872,9 +869,20 @@
                 <div class="employees__card-info-experience">Опыт работы: 3 года</div>
                 <div class="employees__card-info-projects">Принял участие в N проектах</div>
                 <ul class="employees__card-info-details">
-                  <li class="employees__card-info-details-speed">Скорость: 10/10</li>
-                  <li class="employees__card-info-details-quality">Качество: 9/10</li>
-                  <li class="employees__card-info-details-price">Цена: 10 000₽</li>
+                  <li class="employees__card-info-details-speed" data-speed="10">
+                    <div class="employees__card-info-details-text">Скорость: 10/10</div>
+                  </li>
+                  <li class="employees__card-info-details-experience" data-experience="9">
+                    <div class="employees__card-info-details-text">Опыт: 9/10</div>
+                  </li>
+                  <li class="employees__card-info-details-price" data-price="2">
+                    <div class="employees__card-info-details-text">Цена:</div>
+                    <div class="employees__card-info-details-rating">
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
@@ -898,9 +906,20 @@
                 <div class="employees__card-info-experience">Опыт работы: 3 года</div>
                 <div class="employees__card-info-projects">Принял участие в N проектах</div>
                 <ul class="employees__card-info-details">
-                  <li class="employees__card-info-details-speed">Скорость: 10/10</li>
-                  <li class="employees__card-info-details-quality">Качество: 9/10</li>
-                  <li class="employees__card-info-details-price">Цена: 10 000₽</li>
+                  <li class="employees__card-info-details-speed" data-speed="10">
+                    <div class="employees__card-info-details-text">Скорость: 10/10</div>
+                  </li>
+                  <li class="employees__card-info-details-experience" data-experience="9">
+                    <div class="employees__card-info-details-text">Опыт: 9/10</div>
+                  </li>
+                  <li class="employees__card-info-details-price" data-price="3">
+                    <div class="employees__card-info-details-text">Цена:</div>
+                    <div class="employees__card-info-details-rating">
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
@@ -924,9 +943,20 @@
                 <div class="employees__card-info-experience">Опыт работы: 3 года</div>
                 <div class="employees__card-info-projects">Принял участие в N проектах</div>
                 <ul class="employees__card-info-details">
-                  <li class="employees__card-info-details-speed">Скорость: 10/10</li>
-                  <li class="employees__card-info-details-quality">Качество: 9/10</li>
-                  <li class="employees__card-info-details-price">Цена: 10 000₽</li>
+                  <li class="employees__card-info-details-speed" data-speed="10">
+                    <div class="employees__card-info-details-text">Скорость: 10/10</div>
+                  </li>
+                  <li class="employees__card-info-details-experience" data-experience="9">
+                    <div class="employees__card-info-details-text">Опыт: 9/10</div>
+                  </li>
+                  <li class="employees__card-info-details-price" data-price="2">
+                    <div class="employees__card-info-details-text">Цена:</div>
+                    <div class="employees__card-info-details-rating">
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                      <span class="employees__card-info-details-rating-point"></span>
+                    </div>
+                  </li>
                 </ul>
               </div>
 
