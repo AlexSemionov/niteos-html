@@ -1,6 +1,9 @@
+const employeesLimit = 4;
+
 const collectTeamObj = {
   blockEl: document.querySelector('.collect-team'),
   orderEl: document.querySelector('.collect-team__team-order'),
+  orderFormEl: document.querySelector('.collect-team__team-order-form'),
   collectBtnEl: document.querySelector('.collect-team__collect-button'),
   stepManagerEl: document.querySelector('.collect-team__step_manager'),
   stepWorkerEls: document.querySelectorAll('.collect-team__step_worker'),
@@ -11,6 +14,7 @@ const collectTeamObj = {
   employeCardEls: document.querySelectorAll('.collect-team__employees .collect-team__card'),
   manager: null,
   employees: [],
+  totalInfo: document.querySelector('.collect-team__team-employe-details-block-info'),
   totalSpeedEl: document.querySelector(
     '.collect-team__team-employe_total .collect-team__team-employe-info-item_speed'
   ),
@@ -33,8 +37,8 @@ collectTeamObj.managerCardEls.forEach((managerCardEl) => {
   managerCardEl.addEventListener('click', (event) => {
     const isAddButton = event.target.classList.contains('collect-team__card-add-button');
     if (isAddButton) {
-      getCollectTeamCardData(event.currentTarget);
-      addManager(event.currentTarget);
+      const manager = getCollectTeamCardData(event.currentTarget);
+      addManager(manager);
     }
   });
 });
@@ -43,11 +47,21 @@ collectTeamObj.employeCardEls.forEach((employeCardEl) => {
   employeCardEl.addEventListener('click', (event) => {
     const isAddButton = event.target.classList.contains('collect-team__card-add-button');
     if (isAddButton) {
-      getCollectTeamCardData(event.currentTarget);
-      addEmploye(event.currentTarget);
+      const employe = getCollectTeamCardData(event.currentTarget);
+      addEmploye(employe);
     }
   });
 });
+
+if (collectTeamObj.orderFormEl) {
+  collectTeamObj.orderFormEl.addEventListener('submit', (event) => {
+    event.preventDefault();
+    event.currentTarget.reset();
+    collectTeamObj.orderEl.classList.remove('active');
+    collectTeamObj.employeCardEls.forEach((cardEl) => cardEl.classList.remove('active'));
+    resetCollectTeam();
+  });
+}
 
 function getCollectTeamCardData(employeCardEl) {
   if (!employeCardEl) return null;
@@ -63,16 +77,40 @@ function getCollectTeamCardData(employeCardEl) {
   };
 
   const data = {
-    id: elements.card.dataset.id || '',
-    name: elements.name.dataset.name || '',
-    role: elements.role.dataset.role || '',
-    imageSrc: elements.image.dataset.image || '',
-    speed: elements.speed.dataset.rating || '',
-    experience: elements.experience.dataset.rating || '',
-    price: elements.price.dataset.rating || '',
+    id: elements.card ? elements.card.id : '',
+    name: elements.name ? elements.name.dataset.name : '',
+    role: elements.role ? elements.role.dataset.role : '',
+    imageSrc: elements.image ? elements.image.dataset.image : '',
+    speed: elements.speed ? elements.speed.dataset.rating : '',
+    experience: elements.experience ? elements.experience.dataset.rating : '',
+    price: elements.price ? elements.price.dataset.rating : '',
   };
 
-  console.log(data);
+  return data;
+}
+
+function getEmployePageData(employeCardEl) {
+  if (!employeCardEl) return null;
+
+  const elements = {
+    card: employeCardEl,
+    name: employeCardEl.querySelector('.employe__title'),
+    image: employeCardEl.querySelector('.employe__photo-image'),
+    speed: employeCardEl.querySelector('.employe__details-speed'),
+    experience: employeCardEl.querySelector('.employe__details-experience'),
+    price: employeCardEl.querySelector('.employe__details-price'),
+  };
+
+  const data = {
+    id: elements.card ? elements.card.dataset.id : '',
+    name: elements.name ? elements.name.dataset.name : '',
+    role: elements.card ? elements.card.dataset.role : '',
+    imageSrc: elements.image ? elements.image.dataset.image : '',
+    speed: elements.speed ? elements.speed.dataset.rating : '',
+    experience: elements.experience ? elements.experience.dataset.rating : '',
+    price: elements.price ? elements.price.dataset.rating : '',
+  };
+
   return data;
 }
 
@@ -107,59 +145,49 @@ function updateCollectTeam() {
   updateTotal();
 }
 
+function updateTotalInfo(number) {
+  let ending = '';
+  if (number === 0 || number >= 5) ending = 'ов';
+  if (number === 1) ending = '';
+  if (number > 1 && number < 5) ending = 'a';
+  return `${number} сотрудник${ending}`;
+}
+
 function updateTeamCards() {
-  const { manager, employees } = collectTeamObj;
+  updateLocalStorage();
 
-  const cards = manager === null ? employees : [manager, ...employees];
+  const { manager, employees, totalInfo } = collectTeamObj;
 
-  const teamCards = [...cards].map((card) => {
-    const cardData = {
-      imageEl: card.querySelector('.collect-team__card-photo-image'),
-      nameEl: card.querySelector('.collect-team__card-info-name'),
-      roleEl: card.querySelector('.collect-team__card-info-role'),
-      speedEl: card.querySelector('.collect-team__card-info-details-speed'),
-      qualityEl: card.querySelector('.collect-team__card-info-details-quality'),
-      priceEl: card.querySelector('.collect-team__card-info-details-price'),
-      getImageSrc() {
-        return this.imageEl ? this.imageEl.getAttribute('src') : '';
-      },
-      getName() {
-        return this.nameEl ? this.nameEl.innerText : '';
-      },
-      getRole() {
-        return this.roleEl ? this.roleEl.innerText : '';
-      },
-      getSpeed() {
-        return this.speedEl ? this.speedEl.dataset.rating : '';
-      },
-      getQuality() {
-        return this.qualityEl ? this.qualityEl.dataset.rating : '';
-      },
-      getPrice() {
-        return this.priceEl ? this.priceEl.dataset.rating : '';
-      },
-    };
+  const teamData = manager === null ? employees : [manager, ...employees];
 
-    const cardId = card.dataset.id || 'unknown';
+  if (totalInfo) totalInfo.innerText = updateTotalInfo(teamData.length);
+
+  if (teamData.length >= employeesLimit + 1) {
+    collectTeamObj.orderEl.classList.add('active');
+    collectTeamObj.teamEmployeesEl.classList.add('hidden');
+  }
+
+  const teamCards = [...teamData].map((teamItemData) => {
+    const { id, name, role, imageSrc, speed, experience, price } = teamItemData;
 
     const teamCard = document.createElement('div');
     teamCard.classList.add('collect-team__team-employe');
-    teamCard.setAttribute('data-id', cardId);
+    teamCard.setAttribute('data-id', id);
     teamCard.innerHTML = `
       <div class="collect-team__team-employe-details">
         <figure class="collect-team__team-employe-details-photo">
           <img
             class="collect-team__team-employe-details-photo-image"
-            src="${cardData.getImageSrc()}"
+            src="${imageSrc}"
             alt="avatar"
           />
         </figure>
         <div class="collect-team__team-employe-details-block">
           <h3 class="collect-team__team-employe-details-block-title">
-            ${cardData.getName()}
+            ${name}
           </h3>
           <div class="collect-team__team-employe-details-block-info">
-            ${cardData.getRole()} 
+            ${role} 
           </div>
         </div>
       </div>
@@ -167,19 +195,19 @@ function updateTeamCards() {
       <ul class="collect-team__team-employe-info">
         <li
           class="collect-team__team-employe-info-item collect-team__team-employe-info-item_speed"
-          data-rating="${cardData.getSpeed()}"
+          data-rating="${speed}"
         >
-          <div class="collect-team__team-employe-info-item-text">Скорость: ${cardData.getSpeed()}/10</div>
+          <div class="collect-team__team-employe-info-item-text">Скорость: ${speed}/10</div>
         </li>
         <li
           class="collect-team__team-employe-info-item collect-team__team-employe-info-item_experience"
-          data-rating="${cardData.getQuality()}"
+          data-rating="${experience}"
         >
-          <div class="collect-team__team-employe-info-item-text">Опыт: ${cardData.getQuality()}/10</div>
+          <div class="collect-team__team-employe-info-item-text">Опыт: ${experience}/10</div>
         </li>
         <li
           class="collect-team__team-employe-info-item collect-team__team-employe-info-item_price"
-          data-rating="${cardData.getPrice()}"
+          data-rating="${price}"
         >
           <div class="collect-team__team-employe-info-item-text">Цена:</div>
           <div class="collect-team__team-employe-info-item-rating">
@@ -198,10 +226,9 @@ function updateTeamCards() {
       const isCloseButton = event.target.classList.contains(
         'collect-team__team-employe-delete-button'
       );
-      const isManager =
-        collectTeamObj.manager == null ? false : card.id === collectTeamObj.manager.id;
-      if (isCloseButton && isManager) deleteManager(card);
-      if (isCloseButton && !isManager) deleteEmploye(card);
+      const isManager = collectTeamObj.manager == null ? false : id === collectTeamObj.manager.id;
+      if (isCloseButton && isManager) deleteManager(teamItemData);
+      if (isCloseButton && !isManager) deleteEmploye(teamItemData);
     });
 
     return teamCard;
@@ -259,17 +286,17 @@ function updateTotal() {
     collectTeamObj.totalPriceEl.dataset.rating = teamRating.getAvgPrice();
 }
 
-function addManager(managerCardEl) {
-  if (!managerCardEl) return;
+function addManager(managerData) {
+  if (managerData === null) return;
   if (collectTeamObj.stepManagerEl) collectTeamObj.stepManagerEl.classList.add('active');
-  collectTeamObj.manager = managerCardEl;
+  collectTeamObj.manager = managerData;
   collectTeamObj.managersEl.classList.remove('active');
   collectTeamObj.employeesEl.classList.add('active');
   updateCollectTeam();
 }
 
-function deleteManager(managerCardEl) {
-  if (!managerCardEl) return;
+function deleteManager(managerData) {
+  if (managerData === null) return;
   if (collectTeamObj.stepManagerEl) collectTeamObj.stepManagerEl.classList.remove('active');
   collectTeamObj.manager = null;
   collectTeamObj.managersEl.classList.add('active');
@@ -277,12 +304,12 @@ function deleteManager(managerCardEl) {
   updateCollectTeam();
 }
 
-function addEmploye(employeCardEl) {
-  if (!employeCardEl) return;
-  const employeesLimit = 4;
-  employeCardEl.classList.add('active');
-  if (employeCardEl && collectTeamObj.employees.length < employeesLimit) {
-    collectTeamObj.employees = [...collectTeamObj.employees, employeCardEl];
+function addEmploye(employeData) {
+  if (employeData === null) return;
+  const employeCardEl = document.querySelector(`#${employeData.id}`);
+  if (employeCardEl) employeCardEl.classList.add('active');
+  if (collectTeamObj.employees.length < employeesLimit) {
+    collectTeamObj.employees = [...collectTeamObj.employees, employeData];
   }
   if (collectTeamObj.employees.length === employeesLimit) {
     collectTeamObj.orderEl.classList.add('active');
@@ -291,13 +318,61 @@ function addEmploye(employeCardEl) {
   updateCollectTeam();
 }
 
-function deleteEmploye(employeCardEl) {
-  if (!employeCardEl) return;
-  employeCardEl.classList.remove('active');
+function deleteEmploye(employeData) {
+  if (employeData === null) return;
+  const employeCardEl = document.querySelector(`#${employeData.id}`);
+  if (employeCardEl) employeCardEl.classList.remove('active');
   collectTeamObj.employees = [
-    ...collectTeamObj.employees.filter((employe) => employe !== employeCardEl),
+    ...collectTeamObj.employees.filter((employe) => employe.id !== employeData.id),
   ];
   updateCollectTeam();
 }
 
+function resetCollectTeam() {
+  collectTeamObj.manager = null;
+  collectTeamObj.employees = [];
+  updateLocalStorage();
+  updateCollectTeam();
+}
+
+function updateLocalStorage() {
+  window.localStorage.setItem('collectTeamManager', JSON.stringify(collectTeamObj.manager));
+  window.localStorage.setItem('collectTeamEmployees', JSON.stringify(collectTeamObj.employees));
+}
+
+function checkLocalStorage() {
+  const manager = window.localStorage.getItem('collectTeamManager');
+  const employees = window.localStorage.getItem('collectTeamEmployees');
+
+  if (manager !== null) collectTeamObj.manager = JSON.parse(manager);
+  if (employees !== null) {
+    collectTeamObj.employees = JSON.parse(employees);
+    const activeEmployeIds = collectTeamObj.employees.map((employe) => employe.id);
+    collectTeamObj.employeCardEls.forEach((el) => {
+      const isIdActive = activeEmployeIds.includes(el.id);
+      if (isIdActive) el.classList.add('active');
+    });
+  }
+}
+
+checkLocalStorage();
 updateCollectTeam();
+
+const employePageEls = document.querySelectorAll('.employe');
+
+employePageEls.forEach((employePageEl) => {
+  employePageEl.addEventListener('click', (event) => {
+    const isAddButton = event.target.classList.contains('employe__add-button');
+
+    if (isAddButton) {
+      collectTeamObj.blockEl.classList.add('active');
+      const employeData = getEmployePageData(event.currentTarget);
+
+      if (String(employeData.role).toLowerCase() === 'менеджер') {
+        addManager(employeData);
+      } else {
+        addEmploye(employeData);
+      }
+    }
+  });
+});

@@ -263,10 +263,6 @@
       border-radius: 10px;
       background-color: #1a181d;
 
-      &.active {
-        display: block;
-      }
-
       &-title {
         margin: 0 auto 20px;
         font-weight: 500;
@@ -372,6 +368,10 @@
     &-employees,
     &-employe {
       display: flex;
+    }
+
+    &-order.active {
+      display: block;
     }
   }
 

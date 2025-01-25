@@ -156,7 +156,57 @@
     }
 
     &-price {
+      display: flex;
+      align-items: center;
       background-image: url(../assets/icons/coin.svg);
+    }
+
+    &-rating {
+      display: flex;
+      align-items: center;
+
+      &-point {
+        display: block;
+        display: none;
+        width: 14px;
+        aspect-ratio: 1 / 1;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    &-price &-rating {
+      &-point {
+        background-image: url(../assets/icons/ruble.svg);
+      }
+    }
+
+    & > *[data-rating='1'] &-rating {
+      &-point {
+        &:nth-child(1) {
+          display: block;
+        }
+      }
+    }
+
+    & > *[data-rating='2'] &-rating {
+      &-point {
+        &:nth-child(1),
+        &:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+
+    & > *[data-rating='3'] &-rating {
+      &-point {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          display: block;
+        }
+      }
     }
   }
 
