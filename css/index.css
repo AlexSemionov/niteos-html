@@ -6014,12 +6014,17 @@ img {
       -ms-flex-align: center;
           align-items: center;
   gap: 3px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: #fff;
 }
 @media (max-width: 576px) {
   .collect-team__team-employe-info-item {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(33.3333333333% - 6.6666666667px);
             flex: 0 0 calc(33.3333333333% - 6.6666666667px);
+    font-size: 10px;
   }
 }
 .collect-team__team-employe-info-item-text {
@@ -6112,6 +6117,13 @@ img {
     width: 14px;
   }
 }
+.collect-team__team-employe-delete-button_reset {
+  border: 1px solid #1a181d;
+}
+.collect-team__team-employe-delete-button_reset::before {
+  content: "";
+  background: url(../assets/icons/reset.svg) center/cover no-repeat;
+}
 .collect-team__team-order {
   display: block;
   display: none;
@@ -6173,6 +6185,9 @@ img {
     margin: 0 auto;
     max-width: 600px;
   }
+}
+.collect-team__team-order-form-ids {
+  display: none;
 }
 .collect-team__team-order-form-input {
   display: block;
@@ -6583,6 +6598,19 @@ img {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+  padding-left: 19px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+}
+.collect-team__card-info-details-speed {
+  background-image: url(../assets/icons/flash.svg);
+}
+.collect-team__card-info-details-experience {
+  background-image: url(../assets/icons/shield-checkmark-sharp.svg);
+}
+.collect-team__card-info-details-price {
+  background-image: url(../assets/icons/ruble.svg);
 }
 .collect-team__card-info-details-text {
   font-weight: 400;

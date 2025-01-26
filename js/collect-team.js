@@ -4,6 +4,7 @@ const collectTeamObj = {
   blockEl: document.querySelector('.collect-team'),
   orderEl: document.querySelector('.collect-team__team-order'),
   orderFormEl: document.querySelector('.collect-team__team-order-form'),
+  orderFormTeamInputEl: document.querySelector('.collect-team__team-order-form-ids'),
   collectBtnEl: document.querySelector('.collect-team__collect-button'),
   stepManagerEl: document.querySelector('.collect-team__step_manager'),
   stepWorkerEls: document.querySelectorAll('.collect-team__step_worker'),
@@ -15,6 +16,7 @@ const collectTeamObj = {
   manager: null,
   employees: [],
   totalInfo: document.querySelector('.collect-team__team-employe-details-block-info'),
+  totalResetEl: document.querySelector('.collect-team__team-employe-delete-button_reset'),
   totalSpeedEl: document.querySelector(
     '.collect-team__team-employe_total .collect-team__team-employe-info-item_speed'
   ),
@@ -30,6 +32,12 @@ if (collectTeamObj.blockEl) {
   collectTeamObj.blockEl.addEventListener('click', (event) => {
     const isCollectButton = event.target === collectTeamObj.collectBtnEl;
     if (isCollectButton) event.currentTarget.classList.add('active');
+  });
+}
+
+if (collectTeamObj.totalResetEl) {
+  collectTeamObj.totalResetEl.addEventListener('click', () => {
+    resetCollectTeam();
   });
 }
 
@@ -56,6 +64,10 @@ collectTeamObj.employeCardEls.forEach((employeCardEl) => {
 if (collectTeamObj.orderFormEl) {
   collectTeamObj.orderFormEl.addEventListener('submit', (event) => {
     event.preventDefault();
+    let formData = new FormData(collectTeamObj.orderFormEl);
+    console.log(formData.get('name'));
+    console.log(formData.get('phone'));
+    console.log(formData.get('team'));
     event.currentTarget.reset();
     collectTeamObj.orderEl.classList.remove('active');
     collectTeamObj.employeCardEls.forEach((cardEl) => cardEl.classList.remove('active'));
@@ -119,9 +131,11 @@ function updateCollectTeam() {
     if (collectTeamObj.manager === null) {
       collectTeamObj.managersEl.classList.add('active');
       collectTeamObj.employeesEl.classList.remove('active');
+      if (collectTeamObj.stepManagerEl) collectTeamObj.stepManagerEl.classList.remove('active');
     } else {
       collectTeamObj.managersEl.classList.remove('active');
       collectTeamObj.employeesEl.classList.add('active');
+      if (collectTeamObj.stepManagerEl) collectTeamObj.stepManagerEl.classList.add('active');
     }
   }
 
@@ -156,9 +170,12 @@ function updateTotalInfo(number) {
 function updateTeamCards() {
   updateLocalStorage();
 
-  const { manager, employees, totalInfo } = collectTeamObj;
+  const { manager, employees, totalInfo, orderFormTeamInputEl } = collectTeamObj;
 
   const teamData = manager === null ? employees : [manager, ...employees];
+
+  if (orderFormTeamInputEl)
+    orderFormTeamInputEl.value = JSON.stringify(teamData.map((item) => item.id));
 
   if (totalInfo) totalInfo.innerText = updateTotalInfo(teamData.length);
 
@@ -288,7 +305,6 @@ function updateTotal() {
 
 function addManager(managerData) {
   if (managerData === null) return;
-  if (collectTeamObj.stepManagerEl) collectTeamObj.stepManagerEl.classList.add('active');
   collectTeamObj.manager = managerData;
   collectTeamObj.managersEl.classList.remove('active');
   collectTeamObj.employeesEl.classList.add('active');
@@ -297,7 +313,6 @@ function addManager(managerData) {
 
 function deleteManager(managerData) {
   if (managerData === null) return;
-  if (collectTeamObj.stepManagerEl) collectTeamObj.stepManagerEl.classList.remove('active');
   collectTeamObj.manager = null;
   collectTeamObj.managersEl.classList.add('active');
   collectTeamObj.employeesEl.classList.remove('active');
@@ -331,6 +346,7 @@ function deleteEmploye(employeData) {
 function resetCollectTeam() {
   collectTeamObj.manager = null;
   collectTeamObj.employees = [];
+  collectTeamObj.employeCardEls.forEach((cardEl) => cardEl.classList.remove('active'));
   updateLocalStorage();
   updateCollectTeam();
 }
