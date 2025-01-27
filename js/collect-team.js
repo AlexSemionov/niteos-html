@@ -320,17 +320,21 @@ function deleteManager(managerData) {
 }
 
 function addEmploye(employeData) {
+  const emloyeIds = collectTeamObj.employees.map((employe) => employe.id);
   if (employeData === null) return;
+  if (emloyeIds.find((emloyeId) => emloyeId === employeData.id)) return;
+  if (collectTeamObj.employees.length === employeesLimit) {
+    collectTeamObj.orderEl.classList.add('active');
+    collectTeamObj.teamEmployeesEl.classList.add('hidden');
+    return;
+  }
   const employeCardEl = document.querySelector(`#${employeData.id}`);
   if (employeCardEl) employeCardEl.classList.add('active');
   if (collectTeamObj.employees.length < employeesLimit) {
     collectTeamObj.employees = [...collectTeamObj.employees, employeData];
   }
-  if (collectTeamObj.employees.length === employeesLimit) {
-    collectTeamObj.orderEl.classList.add('active');
-    collectTeamObj.teamEmployeesEl.classList.add('hidden');
-  }
   updateCollectTeam();
+  console.log(collectTeamObj.employees.length);
 }
 
 function deleteEmploye(employeData) {
@@ -347,6 +351,8 @@ function resetCollectTeam() {
   collectTeamObj.manager = null;
   collectTeamObj.employees = [];
   collectTeamObj.employeCardEls.forEach((cardEl) => cardEl.classList.remove('active'));
+  collectTeamObj.orderEl.classList.remove('active');
+  collectTeamObj.teamEmployeesEl.classList.remove('hidden');
   updateLocalStorage();
   updateCollectTeam();
 }
