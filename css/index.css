@@ -5302,8 +5302,10 @@ img {
   width: 26px;
   height: 26px;
   background: url(../assets/icons/arrow.svg) center no-repeat;
-  -webkit-transition-property: background-image;
-  transition-property: background-image;
+  -webkit-transition-property: -webkit-filter;
+  transition-property: -webkit-filter;
+  transition-property: filter;
+  transition-property: filter, -webkit-filter;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
   -webkit-transition-duration: 0.2s;
@@ -5312,7 +5314,8 @@ img {
           filter: invert(100%);
 }
 .employees__card-more-link:hover::before {
-  background-image: url(../assets/icons/plus.svg);
+  -webkit-filter: invert(0%);
+          filter: invert(0%);
 }
 
 .employe {
@@ -6364,9 +6367,6 @@ img {
     gap: 10px;
   }
 }
-.collect-team__step.hidden {
-  display: none;
-}
 .collect-team__step-id {
   position: relative;
   display: -webkit-box;
@@ -6687,16 +6687,19 @@ img {
   display: block;
   width: 26px;
   height: 26px;
-  background: url(../assets/icons/arrow.svg) center no-repeat;
-  -webkit-transition-property: background-image;
-  transition-property: background-image;
+  background: url(../assets/icons/plus.svg) center no-repeat;
+  -webkit-transition-property: -webkit-filter;
+  transition-property: -webkit-filter;
+  transition-property: filter;
+  transition-property: filter, -webkit-filter;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  -webkit-filter: invert(0%);
+          filter: invert(0%);
 }
 .collect-team__card-add-button:hover::before {
-  background-image: url(../assets/icons/plus.svg);
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
 }

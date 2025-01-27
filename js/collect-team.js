@@ -15,6 +15,7 @@ const collectTeamObj = {
   employeCardEls: document.querySelectorAll('.collect-team__employees .collect-team__card'),
   manager: null,
   employees: [],
+  totalEl: document.querySelector('.collect-team__team-employe_total'),
   totalInfo: document.querySelector('.collect-team__team-employe-details-block-info'),
   totalResetEl: document.querySelector('.collect-team__team-employe-delete-button_reset'),
   totalSpeedEl: document.querySelector(
@@ -73,6 +74,14 @@ if (collectTeamObj.orderFormEl) {
     collectTeamObj.employeCardEls.forEach((cardEl) => cardEl.classList.remove('active'));
     resetCollectTeam();
   });
+}
+
+function showElement(element) {
+  if (element) element.style.display = null;
+}
+
+function hideElement(element) {
+  if (element) element.style.display = 'none';
 }
 
 function getCollectTeamCardData(employeCardEl) {
@@ -142,18 +151,24 @@ function updateCollectTeam() {
   [...collectTeamObj.stepWorkerEls].forEach((stepEl, index) => {
     if (collectTeamObj.manager === null) {
       stepEl.classList.remove('active');
-      stepEl.classList.add('hidden');
+      hideElement(stepEl);
     } else if (index > collectTeamObj.employees.length) {
       stepEl.classList.remove('active');
-      stepEl.classList.add('hidden');
+      hideElement(stepEl);
     } else if (index === collectTeamObj.employees.length) {
       stepEl.classList.remove('active');
-      stepEl.classList.remove('hidden');
+      showElement(stepEl);
     } else {
       stepEl.classList.add('active');
-      stepEl.classList.remove('hidden');
+      showElement(stepEl);
     }
   });
+
+  if (collectTeamObj.manager === null && collectTeamObj.employees.length === 0) {
+    hideElement(collectTeamObj.totalEl);
+  } else {
+    showElement(collectTeamObj.totalEl);
+  }
 
   updateTeamCards();
   updateTotal();
@@ -181,7 +196,7 @@ function updateTeamCards() {
 
   if (teamData.length >= employeesLimit + 1) {
     collectTeamObj.orderEl.classList.add('active');
-    collectTeamObj.teamEmployeesEl.classList.add('hidden');
+    hideElement(collectTeamObj.teamEmployeesEl);
   }
 
   const teamCards = [...teamData].map((teamItemData) => {
@@ -325,7 +340,7 @@ function addEmploye(employeData) {
   if (emloyeIds.find((emloyeId) => emloyeId === employeData.id)) return;
   if (collectTeamObj.employees.length === employeesLimit) {
     collectTeamObj.orderEl.classList.add('active');
-    collectTeamObj.teamEmployeesEl.classList.add('hidden');
+    showElement(collectTeamObj.teamEmployeesEl);
     return;
   }
   const employeCardEl = document.querySelector(`#${employeData.id}`);
@@ -352,7 +367,7 @@ function resetCollectTeam() {
   collectTeamObj.employees = [];
   collectTeamObj.employeCardEls.forEach((cardEl) => cardEl.classList.remove('active'));
   collectTeamObj.orderEl.classList.remove('active');
-  collectTeamObj.teamEmployeesEl.classList.remove('hidden');
+  showElement(collectTeamObj.teamEmployeesEl);
   updateLocalStorage();
   updateCollectTeam();
 }
