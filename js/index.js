@@ -1,4 +1,5 @@
 import './collect-team.js';
+import './sertificates.js';
 
 const catalogSwiper = new Swiper('.catalog-slider .swiper', {
   slidesPerView: 1,
