@@ -1,0 +1,145 @@
+.our-values {
+  margin: 0 0 20px;
+
+  @include laptop {
+    margin-bottom: 70px;
+  }
+
+  &__content {
+    position: relative;
+    padding: 40px 50px 60px;
+    border-radius: 20px;
+    background: url(../assets/pass-test-bg.webp) center no-repeat;
+    background-size: cover;
+
+    @include laptop {
+      padding: 40px 60px;
+    }
+
+    @include mobile {
+      padding: 50px 25px;
+    }
+
+    & > * {
+      max-width: 654px;
+
+      @include laptop {
+        max-width: 480px;
+      }
+
+      @include mobile {
+        max-width: calc(100% - 60px);
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 10;
+    margin: 0 0 35px;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 150%;
+    color: #fff;
+
+    @include laptop {
+      margin: 0 0 30px;
+      font-size: 30px;
+    }
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    z-index: 10;
+    margin: 0;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 150%;
+    color: #fff;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__paragraph {
+    position: relative;
+    z-index: 10;
+    margin: 16px 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: rgba($color: $white, $alpha: 0.6);
+
+    @include laptop {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__figure {
+    position: absolute;
+    top: -120px;
+    left: 720px;
+    bottom: 0;
+    overflow: hidden;
+
+    @include desktop {
+      top: auto;
+      left: auto;
+      right: 0;
+      width: 400px;
+    }
+
+    @include laptop {
+      width: 320px;
+    }
+
+    @include tablet {
+      width: 200px;
+    }
+
+    @include mobile {
+      top: 20px;
+      right: -16px;
+      width: 170px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 39%;
+      left: 51%;
+      height: 68%;
+      width: 27%;
+      border-radius: 200px;
+      transform: translateX(-50%) translateY(-50%) rotate(-30deg);
+      filter: drop-shadow(0px 0px 25px #ffe4b9);
+    }
+
+    &-led {
+      position: relative;
+      z-index: 1;
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+
+      @include tablet {
+        max-width: none;
+        width: 320px;
+      }
+
+      @include mobile {
+        width: 280px;
+      }
+    }
+  }
+}
