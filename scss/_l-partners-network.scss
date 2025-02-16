@@ -1,0 +1,273 @@
+.partners-network {
+  padding: 110px 0 70px;
+  overflow: hidden;
+
+  @include laptop {
+    padding: 0 0 70px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    margin: 0 0 50px;
+
+    @include laptop {
+      gap: 35px;
+      margin-bottom: 70px;
+    }
+
+    @include mobile {
+      margin-bottom: 50px;
+    }
+
+    &-block {
+      display: flex;
+      gap: 50px;
+
+      @include mobile {
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      &-left {
+        flex: 1 1 420px;
+
+        @include mobile {
+          flex: 1 1 100%;
+        }
+      }
+
+      &-right {
+        flex: 0 1 700px;
+
+        @include mobile {
+          flex: 1 1 100%;
+        }
+      }
+
+      &:last-child {
+        @include mobile {
+          flex-wrap: nowrap;
+        }
+      }
+
+      &:last-child &-left {
+        @include mobile {
+          flex: 1 1 auto;
+        }
+      }
+
+      &:last-child &-right {
+        @include mobile {
+          flex: 0 0 auto;
+        }
+      }
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 133%;
+    color: #fff;
+
+    @include laptop {
+      gap: 5px;
+      font-size: 14px;
+      line-height: 175%;
+    }
+
+    &-number {
+      letter-spacing: 0.15em;
+      opacity: 0.6;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 136%;
+    color: #fff;
+
+    @include laptop {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    max-width: 412px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 133%;
+    color: #fff;
+
+    @include laptop {
+      font-size: 14px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+    gap: 14px;
+
+    @include laptop {
+      justify-content: flex-end;
+    }
+
+    @include mobile {
+      gap: 10px;
+    }
+
+    &-next,
+    &-prev {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      padding: 0;
+      box-sizing: border-box;
+      border: 1px solid #ffffff;
+      border-radius: 35px;
+      transition: background-color ease-in-out 0.1s, transform ease-in-out 0.1s;
+      cursor: pointer;
+
+      @include mobile {
+        width: 35px;
+        height: 35px;
+      }
+
+      &:active {
+        transform: scale(0.96);
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 16px;
+        background: url(../assets/icons/prev.svg) left center no-repeat;
+        transition: filter ease-in-out 0.1s;
+      }
+    }
+
+    &-next {
+      background-color: rgba($color: #ffffff, $alpha: 1);
+
+      &:hover {
+        background-color: rgba($color: #333437, $alpha: 0);
+      }
+
+      &::before {
+        filter: brightness(0.2);
+        transform: rotate(180deg);
+      }
+
+      &:hover::before {
+        filter: brightness(1);
+      }
+    }
+
+    &-prev {
+      background-color: rgba($color: #333437, $alpha: 0);
+
+      &:hover {
+        background-color: rgba($color: #ffffff, $alpha: 1);
+      }
+
+      &::before {
+        filter: brightness(1);
+      }
+
+      &:hover::before {
+        filter: brightness(0.2);
+      }
+    }
+  }
+
+  &__slider {
+    & .swiper {
+      padding-bottom: 30px;
+      overflow: visible;
+
+      &-scrollbar {
+        background-color: #333437;
+
+        &-drag {
+          height: 7px;
+          background-color: #595b60;
+        }
+      }
+    }
+  }
+
+  &__card {
+    min-height: 485px;
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    background-color: #333437;
+
+    @include laptop {
+      min-height: 455px;
+    }
+
+    @include mobile {
+      min-height: 425px;
+      padding: 25px;
+    }
+
+    &_description {
+      display: flex;
+      align-items: center;
+      max-width: 304px;
+      padding: 0;
+      background-color: rgba($color: #333437, $alpha: 0);
+    }
+
+    &-icon {
+      &-image {
+        display: block;
+        width: 40px;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+      }
+    }
+
+    &-title {
+      margin: 24px 0;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 136%;
+      color: #fff;
+
+      @include laptop {
+        margin: 13px 0;
+        font-size: 18px;
+      }
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 133%;
+      color: rgba($color: #ffffff, $alpha: 0.8);
+
+      @include laptop {
+        font-size: 14px;
+      }
+    }
+  }
+}

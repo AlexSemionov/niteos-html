@@ -179,3 +179,33 @@ const projectWorkersSwiper = new Swiper('.project-workers .swiper', {
     prevEl: '.project-workers__controls-prev',
   },
 });
+
+const partnersNetworkSwiper = new Swiper('.partners-network .swiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  mousewheel: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    576: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    1440: {
+      slidesPerView: 3.25,
+      spaceBetween: 30,
+    },
+  },
+  navigation: {
+    nextEl: '.partners-network__controls-next',
+    prevEl: '.partners-network__controls-prev',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});

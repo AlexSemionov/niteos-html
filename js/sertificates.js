@@ -19,7 +19,6 @@ if (sertificatesContentMoreButton) {
 
 function updateSertificates() {
   const activeButton = document.querySelector('.sertificates__toggler-button.active');
-  console.log(activeButton.dataset.target);
   if (!activeButton) return;
   const activeClassName = activeButton.dataset.target;
   if (sertificatesContent) sertificatesContent.dataset.category = activeClassName;
