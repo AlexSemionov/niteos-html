@@ -1,0 +1,17 @@
+.about-video {
+  padding: 50px 0;
+
+  &__wrapper {
+    height: 450px;
+    border-radius: 20px;
+    background-color: #333437;
+
+    @include laptop {
+      height: 400px;
+    }
+
+    @include mobile {
+      height: 240px;
+    }
+  }
+}

@@ -7120,6 +7120,25 @@ img {
   }
 }
 
+.about-video {
+  padding: 50px 0;
+}
+.about-video__wrapper {
+  height: 450px;
+  border-radius: 20px;
+  background-color: #333437;
+}
+@media (max-width: 992px) {
+  .about-video__wrapper {
+    height: 400px;
+  }
+}
+@media (max-width: 576px) {
+  .about-video__wrapper {
+    height: 240px;
+  }
+}
+
 .sertificates {
   padding: 40px 0;
 }
