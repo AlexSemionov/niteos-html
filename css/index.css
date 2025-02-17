@@ -8762,7 +8762,7 @@ img {
 }
 @media (max-width: 576px) {
   .company-details {
-    padding: 0 0 90px;
+    padding: 0 0 20px;
   }
 }
 .company-details__top {
