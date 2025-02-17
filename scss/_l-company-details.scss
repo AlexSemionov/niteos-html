@@ -15,12 +15,9 @@
     gap: 50px;
     margin-bottom: 42px;
 
-    @include laptop {
-
-    }
-
     @include mobile {
-      
+      flex-wrap: wrap;
+      gap: 30px;
     }
   }
 
@@ -39,6 +36,10 @@
       gap: 5px;
       font-size: 14px;
       line-height: 175%;
+    }
+
+    @include mobile {
+      flex: 1 1 100%;
     }
 
     &-number {
@@ -60,7 +61,72 @@
     }
 
     @include mobile {
+      flex: 1 1 100%;
       font-size: 16px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    @include tablet {
+      overflow: auto;
+    }
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      flex: 1 1 100%;
+      padding: 14px 30px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 133%;
+      color: #ffffff;
+      border: 1px solid #000000;
+      border-radius: 40px;
+      transition: all ease-in-out 0.2s;
+      cursor: pointer;
+
+      @include tablet {
+        gap: 30px;
+        min-width: 600px;
+        padding: 12px 30px;
+        font-size: 14px;
+      }
+
+      &:hover {
+        background-color: #000000;
+      }
+
+      &-name {
+        flex: 0 0 calc(100% - 52.3% - 50px);
+        font-weight: 600;
+        text-transform: uppercase;
+
+        @include tablet {
+          flex: 0 0 calc(100% - 60% - 30px);
+        }
+      }
+
+      &-value {
+        flex: 0 0 52.3%;
+
+        @include tablet { 
+          flex: 0 0 60%;
+        }
+
+        & > a {
+          color: inherit;
+          text-decoration: underline;
+          text-decoration-skip-ink: none;
+        }
+      }
     }
   }
 }
