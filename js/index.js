@@ -209,3 +209,25 @@ const partnersNetworkSwiper = new Swiper('.partners-network .swiper', {
     el: '.swiper-scrollbar',
   },
 });
+
+//// partners-conditions
+
+const partnersModal = document.querySelector('.partners-conditions__info-callback-modal');
+const partnersModalToggler = document.querySelector(
+  '.partners-conditions__info-callback-order-button'
+);
+
+if (partnersModal && partnersModalToggler) {
+  partnersModalToggler.addEventListener('click', () => {
+    partnersModal.classList.add('active');
+  });
+
+  partnersModal.addEventListener('click', (event) => {
+    const isLayout = event.target === event.currentTarget;
+    const isClose = event.target.classList.contains(
+      'partners-conditions__info-callback-modal-close'
+    );
+
+    if (isLayout || isClose) partnersModal.classList.remove('active');
+  });
+}

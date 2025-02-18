@@ -6,8 +6,10 @@
     <title>NITEOS</title>
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/fancybox.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <script src="./js/swiper-bundle.min.js" defer></script>
+    <script src="./js/fancybox.umd.js" defer></script>
     <script type="module" src="./js/index.js" defer></script>
   </head>
 
@@ -835,6 +837,44 @@
                   <button class="partners-conditions__info-callback-order-button">
                     ОСТАВИТЬ ЗАЯВКУ
                   </button>
+                </div>
+
+                <div class="partners-conditions__info-callback-modal">
+                  <div class="partners-conditions__info-callback-modal-body">
+                    <div class="partners-conditions__info-callback-modal-close"></div>
+
+                    <div class="partners-conditions__info-callback-modal-content">
+                      <h4 class="partners-conditions__info-callback-modal-title">
+                        Хотите стать нашим партнером?
+                      </h4>
+                      <div class="partners-conditions__info-callback-modal-description">
+                        Оставьте свои данные и мы с вам свяжемся для обсуждения всех дальнейших деталей
+                      </div>
+
+                      <div class="partners-conditions__info-callback-modal-form">
+                        <input
+                          class="partners-conditions__info-callback-modal-form-input partners-conditions__info-callback-modal-form-input_name"
+                          type="text"
+                          placeholder="Ваше ФИО"
+                          required
+                        />
+                        <input
+                          class="partners-conditions__info-callback-modal-form-input partners-conditions__info-callback-modal-form-input_tel"
+                          type="tel"
+                          placeholder="Х ХХХ ХХХ ХХ ХХ"
+                          required
+                        />
+                        <textarea
+                          class="partners-conditions__info-callback-modal-form-textarea"
+                          placeholder="Напишите ваш комментарий"
+                        ></textarea>
+
+                        <button class="partners-conditions__info-callback-modal-form-submit">
+                          ОСТАВИТЬ ЗАЯВКУ
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
