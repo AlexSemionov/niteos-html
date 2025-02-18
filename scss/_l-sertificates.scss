@@ -232,6 +232,11 @@
       transition: opacity ease-in-out 0.2s;
       cursor: pointer;
 
+      & > * {
+        position: relative;
+        z-index: 10;
+      }
+
       &-name {
         margin: 0 0 5px;
         font-weight: 500;
@@ -286,6 +291,15 @@
             filter: brightness(1);
           }
         }
+      }
+
+      &-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
       }
     }
 

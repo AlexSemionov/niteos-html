@@ -25,3 +25,19 @@ function updateSertificates() {
 }
 
 updateSertificates();
+
+if (sertificatesContent) {
+  Fancybox.bind(sertificatesContent, '[data-fancybox="sertificates"]', {
+    Toolbar: {
+      display: {
+        left: [],
+        middle: [],
+        right: ['close'],
+      },
+    },
+    Carousel: {
+      Navigation: false,
+    },
+    Thumbs: false,
+  });
+}
