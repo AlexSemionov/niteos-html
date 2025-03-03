@@ -6335,6 +6335,93 @@ img {
 .collect-team__step.active .collect-team__step-text {
   color: rgba(255, 255, 255, 0.5);
 }
+.collect-team__units {
+  display: none;
+  margin: 30px 0 0;
+}
+.collect-team__units.active {
+  display: block;
+}
+.collect-team__units-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+.collect-team__units-item:last-child {
+  margin-bottom: 0;
+}
+.collect-team__units-item-photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.collect-team__units-item-photo-image {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+.collect-team__units-item-message {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 10px 16px 16px 24px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  color: #ffffff;
+  border-radius: 10px 10px 10px 0;
+  background-color: #1a181d;
+}
+@media (max-width: 992px) {
+  .collect-team__units-item-message {
+    padding: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .collect-team__units-item-message {
+    font-size: 11px;
+    padding: 10px;
+  }
+}
+.collect-team__units-item-message::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  bottom: 0;
+  display: block;
+  width: 9px;
+  height: 11px;
+  background: url(../assets/icons/left-round-angle.svg) bottom right/cover no-repeat;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+}
+.collect-team__units-item:first-child .collect-team__units-item-message {
+  color: #1a181d;
+  background-color: #ffffff;
+}
+.collect-team__units-item:first-child .collect-team__units-item-message::before {
+  -webkit-filter: brightness(1000%);
+          filter: brightness(1000%);
+}
 .collect-team__managers, .collect-team__analytics, .collect-team__employees {
   display: -webkit-box;
   display: -ms-flexbox;

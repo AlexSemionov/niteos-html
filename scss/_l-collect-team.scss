@@ -435,6 +435,85 @@
     }
   }
 
+  &__units {
+    display: none;
+    margin: 30px 0 0;
+
+    &.active {
+      display: block;
+    }
+
+    &-item {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      margin: 0 0 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &-photo {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        border-radius: 20px;
+
+        &-image {
+          display: block;
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+
+      &-message {
+        position: relative;
+        flex: 1 1 auto;
+        padding: 10px 16px 16px 24px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 143%;
+        color: #ffffff;
+        border-radius: 10px 10px 10px 0;
+        background-color: #1a181d;
+
+        @include laptop {
+          padding: 16px;
+        }
+
+        @include mobile {
+          font-size: 11px;
+          padding: 10px;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: -9px;
+          bottom: 0;
+          display: block;
+          width: 9px;
+          height: 11px;
+          background: url(../assets/icons/left-round-angle.svg) bottom right / cover no-repeat;
+          filter: brightness(100%);
+        }
+      }
+
+      &:first-child &-message {
+        color: #1a181d;
+        background-color: #ffffff;
+
+        &::before {
+          filter: brightness(1000%);
+        }
+      }
+    }
+  }
+
   &__managers,
   &__analytics,
   &__employees {

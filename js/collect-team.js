@@ -10,6 +10,7 @@ const collectTeamObj = {
   orderFormTeamInputEl: document.querySelector('.collect-team__team-order-form-ids'),
   collectBtnEl: document.querySelector('.collect-team__collect-button'),
   stepsWrapperEl: document.querySelector('.collect-team__steps'),
+  unitsEl: document.querySelector('.collect-team__units'),
   stepEls: document.querySelectorAll('.collect-team__step'),
   teamEmployeesEl: document.querySelector('.collect-team__team-employees'),
   managersEl: document.querySelector('.collect-team__managers'),
@@ -88,6 +89,14 @@ function hideElement(element) {
   if (element) element.style.display = 'none';
 }
 
+function activateElement(element) {
+  if (element) element.classList.add('active');
+}
+
+function disactivateElement(element) {
+  if (element) element.classList.remove('active');
+}
+
 function getCollectTeamCardData(employeCardEl) {
   if (!employeCardEl) return null;
 
@@ -103,25 +112,7 @@ function getCollectTeamCardData(employeCardEl) {
     name: elements.name ? elements.name.dataset.name : '',
     role: elements.role ? elements.role.dataset.role : '',
     imageSrc: elements.image ? elements.image.dataset.image : '',
-  };
-
-  return data;
-}
-
-function getEmployePageData(employeCardEl) {
-  if (!employeCardEl) return null;
-
-  const elements = {
-    card: employeCardEl,
-    name: employeCardEl.querySelector('.employe__title'),
-    image: employeCardEl.querySelector('.employe__photo-image'),
-  };
-
-  const data = {
-    id: elements.card ? elements.card.dataset.id : '',
-    name: elements.name ? elements.name.dataset.name : '',
-    role: elements.card ? elements.card.dataset.role : '',
-    imageSrc: elements.image ? elements.image.dataset.image : '',
+    message: elements.card.dataset.message ? elements.card.dataset.message : '',
   };
 
   return data;
@@ -223,11 +214,11 @@ function updateTeamCards() {
     collectTeamObj.orderEl.classList.add('active');
     hideElement(collectTeamObj.teamEmployeesEl);
     hideElement(collectTeamObj.stepsWrapperEl);
+    activateElement(collectTeamObj.unitsEl);
   }
 
   const teamCards = [...teamData].map((teamItemData) => {
     const { id, name, role, imageSrc } = teamItemData;
-
     const teamCard = document.createElement('div');
     teamCard.classList.add('collect-team__team-employe');
     teamCard.setAttribute('data-id', id);
@@ -274,6 +265,31 @@ function updateTeamCards() {
     collectTeamObj.teamEmployeesEl.innerHTML = null;
     collectTeamObj.teamEmployeesEl.append(...teamCards);
   }
+
+  const teamUnits = [...teamData].map((teamItemData) => {
+    const { message, imageSrc } = teamItemData;
+
+    const teamUnit = document.createElement('div');
+    teamUnit.classList.add('collect-team__units-item');
+    teamUnit.innerHTML = `
+      <figure class="collect-team__units-item-photo">
+        <img
+          class="collect-team__units-item-photo-image"
+          src="${imageSrc}"
+          alt="avatar"
+        />
+      </figure>
+
+      <div class="collect-team__units-item-message">
+        ${message}
+      </div>
+    `;
+
+    return teamUnit;
+  });
+
+  collectTeamObj.unitsEl.innerHTML = null;
+  collectTeamObj.unitsEl.append(...teamUnits);
 }
 
 function addManager(managerData) {
@@ -308,6 +324,7 @@ function addEmploye(employeData) {
     collectTeamObj.orderEl.classList.add('active');
     showElement(collectTeamObj.teamEmployeesEl);
     showElement(collectTeamObj.stepsWrapperEl);
+    disactivateElement(collectTeamObj.unitsEl);
     return;
   }
   const employeCardEl = document.querySelector(`#${employeData.id}`);
@@ -336,6 +353,7 @@ function resetCollectTeam() {
   collectTeamObj.orderEl.classList.remove('active');
   showElement(collectTeamObj.teamEmployeesEl);
   showElement(collectTeamObj.stepsWrapperEl);
+  disactivateElement(collectTeamObj.unitsEl);
   updateLocalStorage();
   updateCollectTeam();
 }
@@ -365,22 +383,3 @@ function checkLocalStorage() {
 
 checkLocalStorage();
 updateCollectTeam();
-
-const employePageEls = document.querySelectorAll('.employe');
-
-employePageEls.forEach((employePageEl) => {
-  employePageEl.addEventListener('click', (event) => {
-    const isAddButton = event.target.classList.contains('employe__add-button');
-
-    if (isAddButton) {
-      collectTeamObj.blockEl.classList.add('active');
-      const employeData = getEmployePageData(event.currentTarget);
-
-      if (String(employeData.role).toLowerCase() === 'менеджер') {
-        addManager(employeData);
-      } else {
-        addEmploye(employeData);
-      }
-    }
-  });
-});
