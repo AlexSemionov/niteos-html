@@ -6335,7 +6335,7 @@ img {
 .collect-team__step.active .collect-team__step-text {
   color: rgba(255, 255, 255, 0.5);
 }
-.collect-team__managers, .collect-team__employees {
+.collect-team__managers, .collect-team__analytics, .collect-team__employees {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6348,18 +6348,18 @@ img {
   gap: 30px;
 }
 @media (max-width: 576px) {
-  .collect-team__managers, .collect-team__employees {
+  .collect-team__managers, .collect-team__analytics, .collect-team__employees {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
 }
-.collect-team__managers.active, .collect-team__employees.active {
+.collect-team__managers.active, .collect-team__analytics.active, .collect-team__employees.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.collect-team:not(.active) .collect-team__managers, .collect-team:not(.active) .collect-team__employees {
+.collect-team:not(.active) .collect-team__managers, .collect-team:not(.active) .collect-team__analytics, .collect-team:not(.active) .collect-team__employees {
   display: none;
 }
 .collect-team__card {
@@ -6471,11 +6471,18 @@ img {
   line-height: 130%;
   color: #fff;
 }
-.collect-team__card-info-role, .collect-team__card-info-experience, .collect-team__card-info-projects {
+.collect-team__card-info-role, .collect-team__card-info-experience, .collect-team__card-info-advantages {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   color: #fff;
+}
+.collect-team__card-info-advantages-title {
+  margin: 0 0 2px;
+}
+.collect-team__card-info-advantages-list {
+  padding-left: 20px;
+  margin: 0;
 }
 .collect-team__card:hover .collect-team__card-info {
   opacity: 1;

@@ -436,6 +436,7 @@
   }
 
   &__managers,
+  &__analytics,
   &__employees {
     display: flex;
     display: none;
@@ -453,6 +454,7 @@
   }
 
   &:not(.active) &__managers,
+  &:not(.active) &__analytics,
   &:not(.active) &__employees {
     display: none;
   }
@@ -550,11 +552,22 @@
 
       &-role,
       &-experience,
-      &-projects {
+      &-advantages {
         font-weight: 400;
         font-size: 16px;
         line-height: 150%;
         color: #fff;
+      }
+
+      &-advantages {
+        &-title {
+          margin: 0 0 2px;
+        }
+
+        &-list {
+          padding-left: 20px;
+          margin: 0;
+        }
       }
     }
 
