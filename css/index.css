@@ -5930,16 +5930,13 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 50%;
+          flex: 1 1 50%;
   gap: 15px;
 }
 @media (max-width: 576px) {
   .collect-team__team-employe-details {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 50%;
-            flex: 1 1 50%;
     gap: 8px;
   }
 }
@@ -5986,100 +5983,6 @@ img {
   .collect-team__team-employe-details-block-info {
     font-size: 12px;
   }
-}
-.collect-team__team-employe-info {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-@media (max-width: 576px) {
-  .collect-team__team-employe-info {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 10px;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-}
-.collect-team__team-employe-info-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 3px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 143%;
-  color: #fff;
-}
-@media (max-width: 576px) {
-  .collect-team__team-employe-info-item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(33.3333333333% - 6.6666666667px);
-            flex: 0 0 calc(33.3333333333% - 6.6666666667px);
-    font-size: 10px;
-  }
-}
-.collect-team__team-employe-info-item-text {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 143%;
-  color: #fff;
-}
-@media (max-width: 576px) {
-  .collect-team__team-employe-info-item-text {
-    font-size: 10px;
-  }
-}
-.collect-team__team-employe-info-item-rating {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.collect-team__team-employe-info-item-rating-point {
-  display: block;
-  display: none;
-  width: 14px;
-  aspect-ratio: 1/1;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-@media (max-width: 576px) {
-  .collect-team__team-employe-info-item-rating-point {
-    width: 10px;
-  }
-}
-.collect-team__team-employe-info-item_speed .collect-team__team-employe-info-item-rating-point {
-  background-image: url(../assets/icons/flash.svg);
-}
-.collect-team__team-employe-info-item_experience .collect-team__team-employe-info-item-rating-point {
-  background-image: url(../assets/icons/star.svg);
-}
-.collect-team__team-employe-info-item_price .collect-team__team-employe-info-item-rating-point {
-  background-image: url(../assets/icons/ruble.svg);
-}
-.collect-team__team-employe-info-item[data-rating="1"] .collect-team__team-employe-info-item-rating-point:nth-child(1) {
-  display: block;
-}
-.collect-team__team-employe-info-item[data-rating="2"] .collect-team__team-employe-info-item-rating-point:nth-child(1), .collect-team__team-employe-info-item[data-rating="2"] .collect-team__team-employe-info-item-rating-point:nth-child(2) {
-  display: block;
-}
-.collect-team__team-employe-info-item[data-rating="3"] .collect-team__team-employe-info-item-rating-point:nth-child(1), .collect-team__team-employe-info-item[data-rating="3"] .collect-team__team-employe-info-item-rating-point:nth-child(2), .collect-team__team-employe-info-item[data-rating="3"] .collect-team__team-employe-info-item-rating-point:nth-child(3) {
-  display: block;
 }
 .collect-team__team-employe-delete {
   -webkit-box-flex: 0;
@@ -6573,85 +6476,6 @@ img {
   font-size: 16px;
   line-height: 150%;
   color: #fff;
-}
-.collect-team__card-info-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 5px;
-  margin: 15px 0 0;
-  padding: 0;
-  list-style-type: none;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-}
-.collect-team__card-info-details-speed, .collect-team__card-info-details-experience, .collect-team__card-info-details-price {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10px;
-  padding-left: 19px;
-  background-position: left center;
-  background-repeat: no-repeat;
-  background-size: 14px;
-}
-.collect-team__card-info-details-speed {
-  background-image: url(../assets/icons/flash.svg);
-}
-.collect-team__card-info-details-experience {
-  background-image: url(../assets/icons/shield-checkmark-sharp.svg);
-}
-.collect-team__card-info-details-price {
-  background-image: url(../assets/icons/ruble.svg);
-}
-.collect-team__card-info-details-text {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 143%;
-  color: #fff;
-}
-.collect-team__card-info-details-rating {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.collect-team__card-info-details-rating-point {
-  display: block;
-  display: none;
-  width: 14px;
-  aspect-ratio: 1/1;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.collect-team__card-info-details-speed .collect-team__card-info-details-rating-point {
-  background-image: url(../assets/icons/flash.svg);
-}
-.collect-team__card-info-details-experience .collect-team__card-info-details-rating-point {
-  background-image: url(../assets/icons/star.svg);
-}
-.collect-team__card-info-details-price .collect-team__card-info-details-rating-point {
-  background-image: url(../assets/icons/ruble.svg);
-}
-.collect-team__card-info-details > *[data-rating="1"] .collect-team__card-info-details-rating-point:nth-child(1) {
-  display: block;
-}
-.collect-team__card-info-details > *[data-rating="2"] .collect-team__card-info-details-rating-point:nth-child(1), .collect-team__card-info-details > *[data-rating="2"] .collect-team__card-info-details-rating-point:nth-child(2) {
-  display: block;
-}
-.collect-team__card-info-details > *[data-rating="3"] .collect-team__card-info-details-rating-point:nth-child(1), .collect-team__card-info-details > *[data-rating="3"] .collect-team__card-info-details-rating-point:nth-child(2), .collect-team__card-info-details > *[data-rating="3"] .collect-team__card-info-details-rating-point:nth-child(3) {
-  display: block;
 }
 .collect-team__card:hover .collect-team__card-info {
   opacity: 1;

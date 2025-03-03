@@ -18,15 +18,6 @@ const collectTeamObj = {
   totalEl: document.querySelector('.collect-team__team-employe_total'),
   totalInfo: document.querySelector('.collect-team__team-employe-details-block-info'),
   totalResetEl: document.querySelector('.collect-team__team-employe-delete-button_reset'),
-  totalSpeedEl: document.querySelector(
-    '.collect-team__team-employe_total .collect-team__team-employe-info-item_speed'
-  ),
-  totalQualityEl: document.querySelector(
-    '.collect-team__team-employe_total .collect-team__team-employe-info-item_experience'
-  ),
-  totalPriceEl: document.querySelector(
-    '.collect-team__team-employe_total .collect-team__team-employe-info-item_price'
-  ),
 };
 
 if (collectTeamObj.blockEl) {
@@ -171,7 +162,6 @@ function updateCollectTeam() {
   }
 
   updateTeamCards();
-  updateTotal();
 }
 
 function updateTotalInfo(number) {
@@ -224,36 +214,11 @@ function updateTeamCards() {
         </div>
       </div>
 
-      <ul class="collect-team__team-employe-info">
-        <li
-          class="collect-team__team-employe-info-item collect-team__team-employe-info-item_speed"
-          data-rating="${speed}"
-        >
-          <div class="collect-team__team-employe-info-item-text">Скорость: ${speed}/10</div>
-        </li>
-        <li
-          class="collect-team__team-employe-info-item collect-team__team-employe-info-item_experience"
-          data-rating="${experience}"
-        >
-          <div class="collect-team__team-employe-info-item-text">Опыт: ${experience}/10</div>
-        </li>
-        <li
-          class="collect-team__team-employe-info-item collect-team__team-employe-info-item_price"
-          data-rating="${price}"
-        >
-          <div class="collect-team__team-employe-info-item-text">Цена:</div>
-          <div class="collect-team__team-employe-info-item-rating">
-            <span class="collect-team__team-employe-info-item-rating-point"></span>
-            <span class="collect-team__team-employe-info-item-rating-point"></span>
-            <span class="collect-team__team-employe-info-item-rating-point"></span>
-          </div>
-        </li>
-      </ul>
-
       <div class="collect-team__team-employe-delete">
         <button class="collect-team__team-employe-delete-button"></button>
       </div>
     `;
+    
     teamCard.addEventListener('click', (event) => {
       const isCloseButton = event.target.classList.contains(
         'collect-team__team-employe-delete-button'
@@ -270,52 +235,6 @@ function updateTeamCards() {
     collectTeamObj.teamEmployeesEl.innerHTML = null;
     collectTeamObj.teamEmployeesEl.append(...teamCards);
   }
-}
-
-function updateTotal() {
-  const teamRating = {
-    speedEls: document.querySelectorAll(
-      '.collect-team__team-employees .collect-team__team-employe-info-item_speed'
-    ),
-    qualityEls: document.querySelectorAll(
-      '.collect-team__team-employees .collect-team__team-employe-info-item_experience'
-    ),
-    priceEls: document.querySelectorAll(
-      '.collect-team__team-employees .collect-team__team-employe-info-item_price'
-    ),
-    getAvgSpeed() {
-      if (this.speedEls.length === 0) return 10;
-      const total = [...this.speedEls]
-        .map((el) => (el.dataset.rating ? Number(el.dataset.rating) : 0))
-        .reduce((acc, rating) => acc + rating, 0);
-      return Math.round(total / this.speedEls.length);
-    },
-    getAvgQuality() {
-      if (this.qualityEls.length === 0) return 10;
-      const total = [...this.qualityEls]
-        .map((el) => (el.dataset.rating ? Number(el.dataset.rating) : 0))
-        .reduce((acc, rating) => acc + rating, 0);
-      return Math.round(total / this.qualityEls.length);
-    },
-    getAvgPrice() {
-      if (this.priceEls.length === 0) return 3;
-      const total = [...this.priceEls]
-        .map((el) => (el.dataset.rating ? Number(el.dataset.rating) : 0))
-        .reduce((acc, rating) => acc + rating, 0);
-      return Math.round(total / this.priceEls.length);
-    },
-  };
-
-  if (collectTeamObj.totalSpeedEl) {
-    collectTeamObj.totalSpeedEl.dataset.rating = teamRating.getAvgSpeed();
-    collectTeamObj.totalSpeedEl.innerText = `Скорость: ${teamRating.getAvgSpeed()}/10`;
-  }
-  if (collectTeamObj.totalQualityEl) {
-    collectTeamObj.totalQualityEl.dataset.rating = teamRating.getAvgQuality();
-    collectTeamObj.totalQualityEl.innerText = `Опыт: ${teamRating.getAvgQuality()}/10`;
-  }
-  if (collectTeamObj.totalPriceEl)
-    collectTeamObj.totalPriceEl.dataset.rating = teamRating.getAvgPrice();
 }
 
 function addManager(managerData) {
