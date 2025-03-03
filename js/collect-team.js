@@ -288,8 +288,10 @@ function updateTeamCards() {
     return teamUnit;
   });
 
-  collectTeamObj.unitsEl.innerHTML = null;
-  collectTeamObj.unitsEl.append(...teamUnits);
+  if (collectTeamObj.unitsEl) {
+    collectTeamObj.unitsEl.innerHTML = null;
+    collectTeamObj.unitsEl.append(...teamUnits);
+  }
 }
 
 function addManager(managerData) {
