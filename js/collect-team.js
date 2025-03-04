@@ -112,7 +112,9 @@ function getCollectTeamCardData(employeCardEl) {
     name: elements.name ? elements.name.dataset.name : '',
     role: elements.role ? elements.role.dataset.role : '',
     imageSrc: elements.image ? elements.image.dataset.image : '',
-    message: elements.card.dataset.message ? elements.card.dataset.message : '',
+    message1: elements.card.dataset.message1 || '',
+    message2: elements.card.dataset.message2 || '',
+    message3: elements.card.dataset.message3 || '',
   };
 
   return data;
@@ -267,7 +269,10 @@ function updateTeamCards() {
   }
 
   const teamUnits = [...teamData].map((teamItemData) => {
-    const { message, imageSrc } = teamItemData;
+    const { message1, message2, message3, imageSrc } = teamItemData;
+    const messages = [message1, message2, message3];
+
+    const message = messages[Math.floor(Math.random() * messages.length)];
 
     const teamUnit = document.createElement('div');
     teamUnit.classList.add('collect-team__units-item');

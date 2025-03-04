@@ -439,10 +439,6 @@
     display: none;
     margin: 30px 0 0;
 
-    &.active {
-      display: block;
-    }
-
     &-item {
       display: flex;
       align-items: flex-end;
@@ -511,6 +507,12 @@
           filter: brightness(1000%);
         }
       }
+    }
+  }
+
+  &.active &__units {
+    &.active {
+      display: block;
     }
   }
 

@@ -6265,9 +6265,6 @@ img {
   display: none;
   margin: 30px 0 0;
 }
-.collect-team__units.active {
-  display: block;
-}
 .collect-team__units-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6347,6 +6344,9 @@ img {
 .collect-team__units-item:first-child .collect-team__units-item-message::before {
   -webkit-filter: brightness(1000%);
           filter: brightness(1000%);
+}
+.collect-team.active .collect-team__units.active {
+  display: block;
 }
 .collect-team__managers, .collect-team__analytics, .collect-team__employees {
   display: -webkit-box;
