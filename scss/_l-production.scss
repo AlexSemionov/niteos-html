@@ -1,0 +1,165 @@
+.production {
+  padding: 171px 0 0;
+
+  @include laptop {
+    padding: 112px 0 0;
+  }
+
+  & .breadcrumbs {
+    margin-bottom: 30px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 70px;
+    font-weight: 700;
+    font-size: 52px;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include laptop {
+      margin: 0 0 48px;
+      font-size: 42px;
+    }
+
+    @include mobile {
+      margin: 0 0 32px;
+      font-size: 28px;
+    }
+  }
+
+  &__list {
+    &-toggler {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 70px;
+
+      @include laptop {
+        margin-bottom: 50px;
+      }
+
+      @include mobile {
+        margin-bottom: 32px;
+      }
+
+      &-button {
+        flex: 0 0 auto;
+        display: block;
+        box-sizing: border-box;
+        padding: 16px 26px;
+        font-weight: 500;
+        font-size: 18px;
+        color: rgba($color: #ffffff, $alpha: 0.5);
+        border: 1px solid #000;
+        border-radius: 50px;
+        background-color: rgba($color: #000000, $alpha: 0);
+        transition-property: color, border;
+        transition-timing-function: ease-in-out;
+        transition-duration: 0.2s;
+        cursor: pointer;
+
+        @include laptop {
+          padding: 12px 20px;
+          font-size: 14px;
+        }
+
+        &:hover {
+          color: rgba($color: #ffffff, $alpha: 0.75);
+          border-color: rgba($color: #ffffff, $alpha: 0.25);
+        }
+
+        &.active {
+          color: #ffffff;
+          border-color: #ffffff;
+        }
+      }
+    }
+
+    &-content {
+      &-item {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px 30px;
+        display: none;
+
+        @include laptop {
+          gap: 36px 24px;
+        }
+
+        &.active {
+          display: flex;
+        }
+      }
+    }
+
+    &-card {
+      flex: 0 0 calc(100% / 4 - 30px / 4 * 3);
+      max-width: calc(100% / 4 - 30px / 4 * 3);
+
+      @include desktop {
+        flex: 0 0 calc(100% / 3 - 30px / 3 * 2);
+        max-width: calc(100% / 3 - 30px / 3 * 2);
+      }
+
+      @include laptop {
+        flex: 0 0 calc(100% / 2 - 24px / 2);
+        max-width: calc(100% / 2 - 24px / 2);
+      }
+
+      @include mobile {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      &-photo {
+        display: block;
+        width: 100%;
+        margin: 0 0 15px;
+        aspect-ratio: 317 / 309;
+        overflow: hidden;
+        border-radius: 20px;
+
+        @include laptop {
+          border-radius: 12px;
+        }
+
+        &-image {
+          display: block;
+          max-width: 100%;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform ease-out 0.2s;
+          will-change: transform;
+        }
+      }
+
+      &:hover &-photo {
+        &-image {
+          transform: scale(1.1);
+        }
+      }
+
+      &-title {
+        max-width: 100%;
+        margin: 0;
+        font-weight: 700;
+        font-size: 24px;
+        color: #fff;
+        overflow-wrap: break-word;
+
+        @include laptop {
+          font-size: 20px;
+        }
+
+        @include mobile {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
