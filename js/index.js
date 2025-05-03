@@ -1,6 +1,8 @@
 import './collect-team.js';
 import './sertificates.js';
 import './production.js';
+import './catalog.js';
+import './custom-select.js';
 
 const catalogSwiper = new Swiper('.catalog-slider .swiper', {
   slidesPerView: 1,
