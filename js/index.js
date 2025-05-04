@@ -3,6 +3,7 @@ import './sertificates.js';
 import './production.js';
 import './catalog.js';
 import './custom-select.js';
+import './product.js';
 
 const catalogSwiper = new Swiper('.catalog-slider .swiper', {
   slidesPerView: 1,
