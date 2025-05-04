@@ -213,7 +213,7 @@ function updateTeamCards() {
   if (totalInfo) totalInfo.innerText = updateTotalInfo(teamData.length);
 
   if (teamData.length >= employeesLimit + 2) {
-    collectTeamObj.orderEl.classList.add('active');
+    if (collectTeamObj.orderEl) collectTeamObj.orderEl.classList.add('active');
     hideElement(collectTeamObj.teamEmployeesEl);
     hideElement(collectTeamObj.stepsWrapperEl);
     activateElement(collectTeamObj.unitsEl);
