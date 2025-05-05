@@ -1,5 +1,4 @@
 import './sertificates.js';
-import './production.js';
 import './catalog.js';
 import './custom-select.js';
 import './product.js';

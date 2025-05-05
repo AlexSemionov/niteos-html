@@ -84,7 +84,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 50px 30px;
-        display: none;
 
         @include laptop {
           gap: 36px 24px;
